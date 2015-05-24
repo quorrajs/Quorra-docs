@@ -5,9 +5,7 @@
 [Route Filters](#route-filters)
 [Named Routes](#named-routes)
 [Route Groups](#route-groups)
-[Sub-Domain Routing](#sub-domain-routing)
 [Route Prefixing](#route-prefixing)
-[Route Model Binding](#route-model-binding)
 [Throwing 404 Errors](#throwing-404-errors)
 [Routing To Controllers](#routing-to-controllers)
 
