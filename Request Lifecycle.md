@@ -35,7 +35,7 @@ Starts to listen to Request.
 Now that you have a good idea of how a quorra application lift a nodejs server, let's take a closer look at request life cycle!
 
 ## Request lifecycle
-
+@todo: add this
 .....................
 ................
 
@@ -68,4 +68,5 @@ App.before(function(request, result, next) {
 });
 ```
 
-Listeners to these events will be run before request to your application. These events can be helpful for global filtering or global modification of responses. You may register them in one of your start files.
+Listeners to this event will be run before request to your application. This event can be helpful for global
+filtering or global modification of responses. You may register them in one of your start files.

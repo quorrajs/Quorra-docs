@@ -117,7 +117,7 @@ Route.get('user/{id}', function(req, res, id)
 .where('id', '[0-9]+');
 ```
 
-### Passing An Array Of Wheres
+### Passing An Object Of Wheres
 
 Of course, you may pass an object of constraints when necessary:
 
@@ -163,13 +163,13 @@ Route filters provide a convenient way of limiting access to a given route, whic
 Defining A Route Filter
 
 ```javascript
-var Redirect = require('positron').redirect;
+var URL = App.url;
 
 Route.filter('old', function(req, res, next)
 {
     if (req.get('age') < 200)
     {
-        Redirect.to('home');
+        res.redirect(URL.to('home'));
     }
 });
 ```
@@ -263,12 +263,11 @@ You may also specify route names for controller actions:
 Route.get('user/profile', {'as': 'profile', 'uses': 'UserController@showProfile'});
 ```
 
-Now, you may use the route's name when generating URLs or redirects:
-
-var url = URL.route('profile');
+Now, you may use the route's name when generating URLs:
 
 ```javascript
-Redirect.route('profile');
+var URL = App.url;
+var profileUrl = URL.route('profile');
 ```
 
 ### Route Groups
@@ -293,7 +292,7 @@ Route.group({'before': 'auth'}, function()
 You may also use the namespace parameter within your group array to specify all controllers within that group as being in a given namespace:
 
 ```javascript
-Route.group({'namespace': 'Admin'}, function()
+Route.group({'namespace': 'controllers/admin'}, function()
 {
     //
 });
@@ -301,7 +300,7 @@ Route.group({'namespace': 'Admin'}, function()
 
 ### Route Prefixing
 
-A group of routes may be prefixed by using the prefix option in the attributes array of a group:
+A group of routes may be prefixed by using the prefix option in the attributes object of a group:
 
 ```javascript
 Route.group({'prefix': 'admin'}, function()
