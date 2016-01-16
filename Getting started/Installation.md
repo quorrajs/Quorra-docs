@@ -20,6 +20,7 @@ dependencies installed.
 
 Quorra has a few system requirements.
 @todo: update
+
 - NodeJS >= xx
 - npm >= xx
 
