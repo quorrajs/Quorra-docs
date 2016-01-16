@@ -1,9 +1,9 @@
 # Configuration
 
-[Introduction](#introduction)
-[Environment Configuration](#environment-configuration)
-[Protecting Sensitive Configuration](#protecting-sensitive-configuration)
-[Maintenance Mode](#maintenance-mode)
+ - [Introduction](#introduction)
+ - [Environment Configuration](#environment-configuration)
+ - [Protecting Sensitive Configuration](#protecting-sensitive-configuration)
+ - [Maintenance Mode](#maintenance-mode)
 
 ## Introduction
 

@@ -1,7 +1,7 @@
 # Mail
 
-[Configuration](#configuration)
-[Basic Usage](#basic-usage)
+ - [Configuration](#configuration)
+ - [Basic Usage](#basic-usage)
 
 
 ## Configuration

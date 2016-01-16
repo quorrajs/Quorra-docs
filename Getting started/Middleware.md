@@ -1,8 +1,8 @@
 # HTTP Middleware
 
-[Introduction](#introduction)
-[Custom Middleware](#custom-middleware)
-[Registering Middleware](#registering-middleware)
+ - [Introduction](#introduction)
+ - [Custom Middleware](#custom-middleware)
+ - [Registering Middleware](#registering-middleware)
 
 ## Introduction
 

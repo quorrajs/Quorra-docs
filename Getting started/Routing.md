@@ -1,14 +1,14 @@
 # Routing
 
-[Basic Routing](#basic-routing)
-[Route Parameters](#route-parameters)
-[Route Filters](#route-filters)
-[Named Routes](#named-routes)
-[Route Groups](#route-groups)
-[Route Prefixing](#route-prefixing)
-[Route Model Binding](#route-model-binding)
-[Throwing 404 Errors](#throwing-404-errors)
-[Routing To Controllers](#routing-to-controllers)
+ - [Basic Routing](#basic-routing)
+ - [Route Parameters](#route-parameters)
+ - [Route Filters](#route-filters)
+ - [Named Routes](#named-routes)
+ - [Route Groups](#route-groups)
+ - [Route Prefixing](#route-prefixing)
+ - [Route Model Binding](#route-model-binding)
+ - [Throwing 404 Errors](#throwing-404-errors)
+ - [Routing To Controllers](#routing-to-controllers)
 
 ## Basic Routing
 

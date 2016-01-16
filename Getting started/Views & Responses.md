@@ -1,11 +1,11 @@
 # Views & Responses
 
-[Basic Responses](#basic-responses)
-[Redirects](#redirects)
-[Views](#views)
-[View Composers](#view-composers)
-[Special Responses](#special-responses)
-[Response Macros](#response-macros)
+ - [Basic Responses](#basic-responses)
+ - [Redirects](#redirects)
+ - [Views](#views)
+ - [View Composers](#view-composers)
+ - [Special Responses](#special-responses)
+ - [Response Macros](#response-macros)
 
 ## Basic Responses
 

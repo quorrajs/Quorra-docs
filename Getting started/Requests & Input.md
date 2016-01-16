@@ -1,10 +1,10 @@
 # Requests & Input
 
-[Basic Input](#basic-input)
-[Cookies](#cookies)
-[Old Input](#old-input)
-[Files](#files)
-[Request Information](#request-information)
+ - [Basic Input](#basic-input)
+ - [Cookies](#cookies)
+ - [Old Input](#old-input)
+ - [Files](#files)
+ - [Request Information](#request-information)
 
 ## Basic Input
 

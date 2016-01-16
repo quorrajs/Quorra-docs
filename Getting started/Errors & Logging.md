@@ -1,9 +1,9 @@
 #Errors & Logging
 
-[Configuration](#configuration)
-[Handling Errors](#handling-errors)
-[Handling 404 Errors](#handling-404-errors)
-[Logging](#logging)
+ - [Configuration](#configuration)
+ - [Handling Errors](#handling-errors)
+ - [Handling 404 Errors](#handling-404-errors)
+ - [Logging](#logging)
 
 ## Configuration
 

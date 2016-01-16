@@ -1,6 +1,6 @@
 # Models & ORM
 
-[Configuration](#configuration)
+ - [Configuration](#configuration)
 
 ## Configuration
 

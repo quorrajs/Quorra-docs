@@ -1,8 +1,8 @@
 # Installation
 
-[Quorra Installation](#quorra-installation)
-[System requirements](#system-requirements)
-[Configuration](#configuration)
+ - [Quorra Installation](#quorra-installation)
+ - [System requirements](#system-requirements)
+ - [Configuration](#configuration)
 
 ## Quorra Installation
 

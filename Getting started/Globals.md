@@ -1,8 +1,8 @@
 # Globals
 
-[Overview](#overview)
-[The app object](#the-app-object)
-[Models](#models)
+ - [Overview](#overview)
+ - [The app object](#the-app-object)
+ - [Models](#models)
 
 ## Overview
 
