@@ -6,6 +6,7 @@
 [Named Routes](#named-routes)
 [Route Groups](#route-groups)
 [Route Prefixing](#route-prefixing)
+[Route Model Binding](#route-model-binding)
 [Throwing 404 Errors](#throwing-404-errors)
 [Routing To Controllers](#routing-to-controllers)
 
@@ -77,7 +78,7 @@ var URL = require('positron').url;
 var url = URL.to('foo');
 ```
 
-### Route Parameters
+## Route Parameters
 
 ```javascript
 Route.get('user/{id}', function(req, res, id)
@@ -156,7 +157,7 @@ Route.filter('foo', function(req, res, next)
 });
 ```
 
-### Route Filters
+## Route Filters
 
 Route filters provide a convenient way of limiting access to a given route, which is useful for creating areas of your site which require authentication. You can register your application filters in the app/filters.js file.
 
@@ -246,7 +247,7 @@ You may also constrain pattern filters by HTTP verbs:
 Route.when('admin/*', 'admin', ['post']);
 ```
 
-### Named Routes
+## Named Routes
 
 Named routes make referring to routes when generating redirects or URLs more convenient. You may specify a name for a route like so:
 
@@ -270,7 +271,7 @@ var URL = App.url;
 var profileUrl = URL.route('profile');
 ```
 
-### Route Groups
+## Route Groups
 
 Sometimes you may need to apply filters to a group of routes. Instead of specifying the filter on each route, you may use a route group:
 
@@ -298,7 +299,7 @@ Route.group({'namespace': 'controllers/admin'}, function()
 });
 ```
 
-### Route Prefixing
+## Route Prefixing
 
 A group of routes may be prefixed by using the prefix option in the attributes object of a group:
 
@@ -314,7 +315,53 @@ Route.group({'prefix': 'admin'}, function()
 });
 ```
 
-### Throwing 404 Errors
+## Route Model Binding
+
+Model binding provides a convenient way to inject model instances into your routes. For example, instead of injecting
+a user's ID, you can inject the entire User model instance that matches the given ID. First, use the `Route.model`
+method to specify the model that should be used for a given parameter:
+
+### Binding A Parameter To A Model
+
+```javascript
+var Route = app.router;
+
+Route.model('user', 'User');
+```
+
+Next, define a route that contains a `{user}` parameter:
+
+```javascript
+Route.get('profile/{user}', function(req, res, user)
+{
+    //
+});
+```
+Since we have bound the {user} parameter to the User model, a User instance will be injected into the route. So, for
+example, a request to profile/1 will inject the User instance which has an ID of 1.
+
+Note: If a matching model instance is not found in the database, a 404 error will be thrown.
+If you wish to specify your own "not found" behavior, you may pass a callback as the third argument to the model method:
+
+```javascript
+Route.model('user', 'User', function(req, res, next)
+{
+    throw new Error(404);
+});
+```
+
+Sometimes you may wish to use your own resolver for route parameters. Simply use the Route::bind method:
+
+```javascript
+Route.bind('user', function(value, route, req, callback)
+{
+    User.findOne(id, function(err, model){
+        callback(model);
+    });
+});
+```
+
+## Throwing 404 Errors
 
 There are two ways to manually trigger a 404 error from a route. First, you may use the App.abort method:
 
