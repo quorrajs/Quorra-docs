@@ -3,6 +3,7 @@
  - [Introduction](#introduction)
  - [Language Files](#language-files)
  - [Basic Usage](#basic-usage)
+ - [Object notation](#object-notation)
  - [Pluralization](#pluralization)
 
 ## Introduction
