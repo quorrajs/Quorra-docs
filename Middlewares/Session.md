@@ -3,7 +3,6 @@
 [Configuration](#configuration)
 [Session Usage](#session-usage)
 [Flash Data](#flash-data)
-[CSRF Token](#csrf-token)
 [Database Sessions](#database-sessions)
 [Session Drivers](#session-drivers)
 
@@ -26,7 +25,7 @@ The Quorra framework uses the flash session key internally, so you should not ad
 
 The session can be accessed via the HTTP request object's session property.
 
-### toring An Item In The Session
+### Storing An Item In The Session
 
 ```javascript
 req.session.put('key', 'value');
@@ -108,22 +107,6 @@ req.session.reflash();
 
 ```javascript
 req.session.keep('username', 'email');
-```
-
-## CSRF Token
-
-By default Quorra generates and keeps CSRF token for your application in session.
-
-### Access CSRF token
-
-```javascript
-req.session.getToken()
-```
-
-## Regenerate CSRF token
-
-```javascript
-req.session.regenerateToken()
 ```
 
 ## Database Sessions
