@@ -1,8 +1,8 @@
 # Request
 
-[Introduction]
-[Properties]
-[Methods]
+[Introduction](#introduction)
+[Properties](#properties)
+[Methods](#methods)
 
 ## Introduction
 
