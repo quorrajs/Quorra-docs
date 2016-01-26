@@ -7,6 +7,8 @@
  - [Special Responses](#special-responses)
  - [Response Macros](#response-macros)
 
+Read more about Quorra request object [here](response).
+
 ## Basic Responses
 
 ### Returning Strings From Routes
@@ -56,7 +58,7 @@ library supports. You can configure your template engine settings in app/config/
 A simple view could look something like this:
 
 ```
-<!-- View stored in resources/views/index.jade -->
+<!-- View stored in applicationRoot/resources/views/index.jade -->
 
 extends layout
 

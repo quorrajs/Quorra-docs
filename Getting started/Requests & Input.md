@@ -6,6 +6,8 @@
  - [Files](#files)
  - [Request Information](#request-information)
 
+Read more about Quorra request object [here](request).
+
 ## Basic Input
 
 You may access all user input with a few simple methods. You do not need to worry about the HTTP verb used for the request, as input is accessed in the same way for all verbs.
