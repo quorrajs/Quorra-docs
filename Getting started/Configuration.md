@@ -154,23 +154,26 @@ This makes it easy to "disable" your application while it is updating or when yo
 to the `App.down` method is already present in your app/start/global.js file. The response from this method will be
 sent to users when your application is in maintenance mode.
 
-To enable maintenance mode, simply execute the down Quorra command:
+To enable maintenance mode, simply execute the `down` Quorra-cli command:
 
+```
 quorra down
-To disable maintenance mode, use the up command:
+```
 
+To disable maintenance mode, use the `up` command:
+
+```
 quorra up
+```
+
 To show a custom view when your application is in maintenance mode, you may add something like the following to your
  application's app/start/global.js file:
 
-@todo: send code
 ```javascript
 App::down(function(req, res, next)
 {
-     res.view('maintenance');
+     res.status(503).view('maintenance');
 });
 ```
 
 If the Closure passed to the down method calls next method, maintenance mode will be ignored for that request.
-
-@todo: queues

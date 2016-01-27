@@ -150,9 +150,23 @@ var header = req.header('referer');
 ### Check If The Given type(s) Is Acceptable
 
 ```javascript
-     // Accept: text/html
-     req.accepts('html');
-     // => "html"
+ // Accept: text/html
+ req.accepts('html');
+ // => "html"
 ```
 
-@todo: todo add more
+### Determining If The Request Is Over HTTPS
+
+```javascript
+if(req.secure) {
+    //
+}
+```
+
+### Determine If The Request Is Using AJAX
+
+```javascript
+if(req.xhr) {
+    //
+}
+```

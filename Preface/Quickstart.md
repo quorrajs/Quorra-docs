@@ -170,5 +170,5 @@ block content
 Now, you should be able to hit the /users route and see the names of your users displayed in the response.
 
 This is just the beginning. In this tutorial, you've seen the very basics of Quorra, but there are so many more
-exciting things to learn. Keep reading through the documentation and dig deeper into the powerful features Quorra
+exciting things to learn. Keep reading through the documentation and dig deeper into the powerful features of Quorra
 framework.
