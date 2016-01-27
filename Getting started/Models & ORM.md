@@ -22,7 +22,7 @@ To get started, create a waterline model. Models live in the app/models director
 ### Defining An Waterline Model
 
 ```javascript
-// path: app/models/user.js
+// path: app/models/User.js
 var User = {
     attributes: {
        ...
@@ -39,7 +39,7 @@ assume the User model stores records in the user table. You may specify a custom
 on your model:
 
 ```javascript
-// path: app/models/user.js
+// path: app/models/User.js
 var User = {
     tableName: 'my_users',
 
@@ -121,6 +121,17 @@ attributes: {
 ```
 
 See [Model Attributes](https://github.com/balderdashy/waterline-docs/blob/master/models/data-types-attributes.md).
+
+### migrate
+
+This flag sets the schema to automatically alter the schema, drop the schema or make no changes (safe). Default: `alter`
+
+ - safe - never auto-migrate my database(s). I will do it myself (by hand).
+ - alter - auto-migrate, but attempt to keep my existing data (experimental).
+ - drop - wipe/drop ALL my data and rebuild models every time I run Quorra server.
+
+In a production environment (NODE_ENV==="production") Quorra always uses migrate:"safe" to protect inadvertent deletion
+ of your data.
 
 ### Retrieving All Models
 
