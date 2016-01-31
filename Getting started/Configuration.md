@@ -170,7 +170,7 @@ To show a custom view when your application is in maintenance mode, you may add 
  application's app/start/global.js file:
 
 ```javascript
-App::down(function(req, res, next)
+App.down(function(req, res, next)
 {
      res.status(503).view('maintenance');
 });
