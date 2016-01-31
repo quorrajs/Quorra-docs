@@ -61,7 +61,7 @@ Notice that you do not have to specify every option that is in the base configur
 wish to override. The environment configuration files will "cascade" over the base files.
 
 Next, we need to instruct the framework how to determine which environment it is running in. The default environment
-is always production. However, you may setup other environments within the bootstrap/start.js file at the root of
+is always production. However, you may setup other environments within the `bootstrap/start.js` file at the root of
 your installation. In this file you will find an `app.detectEnvironment` call. The object passed to this method is
 used to determine the current environment. You may add other environments and machine names to the object as needed.
 
@@ -85,6 +85,11 @@ var env = app.detectEnvironment(function()
     return process.env.NODE_ENV;
 });
 ```
+
+Note: If you don't wish to use Quorra's machine based environment detection at all you can just set NODE_ENV to
+whatever you wish from your commandline also, or pass commandline argument `--env development` when you run Quorra app.
+This will override whatever you configure for the environment detection in the `bootstrap/start.js` file.
+
 
 ### Accessing The Current Application Environment
 
