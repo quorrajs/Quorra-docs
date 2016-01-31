@@ -50,7 +50,7 @@ myMiddleware.prototype.handle = function(request, response){
     this.__next();
 }
 
-app.middleware(myMiddleware);
+App.middleware(myMiddleware);
 ```
 
 ## Methods
@@ -311,7 +311,7 @@ The following are some examples of JSONP responses using the same code:
 res.jsonp({ user: 'tobi' });
 // => foo({ "user": "tobi" })
 
-app.config.set('response.jsonpCallbackName', 'cb');
+App.config.set('response.jsonpCallbackName', 'cb');
 
 // ?cb=foo
 res.status(500).jsonp({ error: 'message' });

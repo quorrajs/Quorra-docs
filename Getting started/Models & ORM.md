@@ -98,7 +98,7 @@ lowercasing its filename. All waterline models are attached to `app.models` obje
 can access a model like following:
 
 ```javascript
-User = app.models.user // where user is the model identity
+User = App.models.user // where user is the model identity
 ```
 
 #### globalId

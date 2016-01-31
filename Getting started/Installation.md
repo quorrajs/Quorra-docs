@@ -39,7 +39,7 @@ Once Quorra is installed, you should also configure your local environment. This
 error messages when developing on your local machine. By default, detailed error reporting is disabled in your
 production configuration file.
 
-Note: You should never have app.debug set to true for a production application. Never, ever do it.
+Note: You should never have `app.debug` set to true for a production application. Never, ever do it.
 
 ### Permissions
 

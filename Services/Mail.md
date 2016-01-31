@@ -19,7 +19,7 @@ For test purpose you may install and use [node-mailer-stub-transport](https://gi
 The `Mail.send` method may be used to send an e-mail message:
 
 ```javascript
-var Mail = app.mail;
+var Mail = App.mail;
 
 Mail.send('emails/welcome', {'key': 'value'}, {'to': 'email'}, function(err, info)
 {

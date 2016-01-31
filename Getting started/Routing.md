@@ -324,7 +324,7 @@ method to specify the model that should be used for a given parameter:
 ### Binding A Parameter To A Model
 
 ```javascript
-var Route = app.router;
+var Route = App.router;
 
 Route.model('user', 'User');
 ```

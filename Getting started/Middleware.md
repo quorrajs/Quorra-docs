@@ -64,5 +64,5 @@ create a middleware.js file in 'app' folder and include it in the `app/start/glo
 Syntax for registering a custom middleware is
 
 ```javascript
-app.middleware(require('<middleware constructor>'));
+App.middleware(require('<middleware constructor>'));
 ```

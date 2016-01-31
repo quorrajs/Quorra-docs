@@ -40,10 +40,10 @@ Language files are simply json file with keyed strings. For example:
 ### Changing The Default Language At Runtime
 
 The default language for your application is stored in the app/config/lang.js configuration file. You may change the
-active language at any time using the `app.setLocale` method:
+active language at any time using the `App.setLocale` method:
 
 ```javascript
-app.setLocale('es');
+App.setLocale('es');
 ```
 
 You may change the active language for a particular request by using the `req.setLocale` method:
