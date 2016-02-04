@@ -5,6 +5,7 @@
  - [Route Filters](#route-filters)
  - [Named Routes](#named-routes)
  - [Route Groups](#route-groups)
+ - [Sub-Domain Routing](#sub-domain-routing)
  - [Route Prefixing](#route-prefixing)
  - [Route Model Binding](#route-model-binding)
  - [Throwing 404 Errors](#throwing-404-errors)
@@ -64,7 +65,7 @@ Route.any('foo', function()
 ### Forcing A Route To Be Served Over HTTPS
 
 ```javascript
-Route.get('foo', {'https': true, uses: function()
+Route.get('foo', {'https': true, uses: function(req, res)
 {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Must be over HTTPS');
@@ -104,13 +105,13 @@ Route.get('user/{name?}', function(req, res, name)
 
 ### Regular Expression Route Constraints
 
+```javascript
 Route.get('user/{name}', function(req, res, name)
 {
     //
 })
 .where('name', '[A-Za-z]+');
 
-```javascript
 Route.get('user/{id}', function(req, res, id)
 {
     //
@@ -178,7 +179,7 @@ Route.filter('old', function(req, res, next)
 ### Attaching A Filter To A Route
 
 ```javascript
-Route.get('user', {'before': 'old', uses: function()
+Route.get('user', {'before': 'old', uses: function(req, res)
 {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('You are over 200 years old!');
@@ -194,7 +195,7 @@ Route.get('user', {'before': 'old', 'uses': 'UserController@showProfile'});
 ### Attaching Multiple Filters To A Route
 
 ```javascript
-Route.get('user', {'before': 'auth|old', uses: function()
+Route.get('user', {'before': 'auth|old', uses: function(req, res)
 {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('You are authenticated and over 200 years old!');
@@ -204,7 +205,7 @@ Route.get('user', {'before': 'auth|old', uses: function()
 ### Attaching Multiple Filters Via Array
 
 ```javascript
-Route.get('user', {'before': ['auth', 'old'], uses: function()
+Route.get('user', {'before': ['auth', 'old'], uses: function(req, res)
 {
      res.writeHead(200, {'Content-Type': 'text/plain'});
      res.end('You are authenticated and over 200 years old!');
@@ -214,12 +215,12 @@ Route.get('user', {'before': ['auth', 'old'], uses: function()
 ### Specifying Filter Parameters
 
 ```javascript
-Route.filter('age', function(res, res, next, value)
+Route.filter('age', function(req, res, next, value)
 {
     //
 });
 
-Route.get('user', {'before': 'age:200', uses: function()
+Route.get('user', {'before': 'age:200', uses: function(req, res)
 {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Hello World');
@@ -252,7 +253,7 @@ Route.when('admin/*', 'admin', ['post']);
 Named routes make referring to routes when generating redirects or URLs more convenient. You may specify a name for a route like so:
 
 ```javascript
-Route.get('user/profile', {'as': 'profile', uses: function()
+Route.get('user/profile', {'as': 'profile', uses: function(req, res)
 {
     //
 }});
@@ -278,12 +279,12 @@ Sometimes you may need to apply filters to a group of routes. Instead of specify
 ```javascript
 Route.group({'before': 'auth'}, function()
 {
-    Route.get('/', function()
+    Route.get('/', function(req, res)
     {
         // Has Auth Filter
     });
 
-    Route.get('user/profile', function()
+    Route.get('user/profile', function(req, res)
     {
         // Has Auth Filter
     });
@@ -296,6 +297,27 @@ You may also use the namespace parameter within your group array to specify all 
 Route.group({'namespace': 'controllers/admin'}, function()
 {
     //
+});
+```
+
+## Sub-Domain Routing
+
+Quorra routes supports sub-domain routing. Quorra routes are also able to handle wildcard sub-domains, and will pass
+your wildcard parameters from the domain:
+
+### Registering Sub-Domain Routes
+
+```javascript
+Route.get('users', {domain: 'users.myapp.com', 'uses': function(req, res) {
+    //
+}});
+
+Route.group({'domain': '{account}.myapp.com'}, function() {
+
+    Route.get('user/{id}', function(req, res, account, id) {
+        //
+    });
+
 });
 ```
 
