@@ -179,10 +179,17 @@ Route.resource('photo', 'PhotoController', {'only': ['index', 'show']});
 
 Route.resource('photo', 'PhotoController', {'except': ['create', 'store', 'update', 'destroy']});
 ```
-By default, all resource controller actions have a route name; however, you can override these names by passing a names array with your options:
+By default, all resource controller actions have a route name; however, you can override these names by passing a
+names object with your options:
 
 ```javascript
 Route::resource('photo', 'PhotoController', {'names': {'create': 'photo.build'}});
+```
+
+You can prefix all resource route names with your own prefix by using `as` attribute:
+
+```javascript
+Route::resource('photo', 'PhotoController', {'as': 'prefix'});
 ```
 
 Handling Nested Resource Controllers
@@ -202,7 +209,7 @@ var BaseController = require('../BaseController');
 
 var PhotoCommentController = BaseController.extend(function(){
 
-        this.show = function(req, res, $photoId, $commentId) {
+        this.show = function(req, res, photoId, commentId) {
             //
         }
 });
