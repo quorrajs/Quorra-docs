@@ -1,7 +1,16 @@
 # Quorra CLI
 
+[Installation](#installation)
 [Introduction](#introduction)
 [Usage](#usage)
+
+## Installation
+
+Install the Quorra cli using npm.
+
+```
+npm install -g quorra-cli
+```
 
 ## Introduction
 
