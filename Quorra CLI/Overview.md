@@ -28,9 +28,9 @@ quorra --help
 ```
 ### Viewing The Help Screen For A Command
 
-Every command also includes a "help" screen which displays and describes the command's available arguments and
-options. To view a help screen, simply precede the name of the command with help:
+Every command also includes a help screen which displays and describes the command's available arguments and
+options. To view a help screen, simply follow the name of the command with `--help`:
 
 ```
-quorra --help routes
+quorra routes --help
 ```

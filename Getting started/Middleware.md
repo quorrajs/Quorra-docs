@@ -20,12 +20,12 @@ query parsing, enabling http method override feature, and more. All of these mid
 ## Custom Middleware
 
 To create a new middleware, use the make:middleware Quorra command:
-@todo:depends on quorra make:middleware command
+
 ```
-quorra make:middleware AgeMiddleware
+quorra generate-middleware AgeMiddleware
 ```
 
-This command will place a new AgeMiddleware constructor within your app/middleware directory. In this middleware, we
+This command will place a new AgeMiddleware constructor within your `app/middlewares` directory. In this middleware, we
 will only allow access to the route if the supplied age is greater than 200. Otherwise, we will issue a request not
 acceptable error.
 
