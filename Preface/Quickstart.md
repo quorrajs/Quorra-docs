@@ -1,10 +1,10 @@
 # Quorra Quickstart
 
-[Installation](#installation)
-[Routing](#routing)
-[Creating A View](#creating-a-View)
-[Waterline ORM](#waterline-orm)
-[Displaying Data](#displaying-data)
+ - [Installation](#installation)
+ - [Routing](#routing)
+ - [Creating A View](#creating-a-View)
+ - [Waterline ORM](#waterline-orm)
+ - [Displaying Data](#displaying-data)
 
 ## Installation
 

@@ -1,10 +1,10 @@
 #Session
 
-[Configuration](#configuration)
-[Session Usage](#session-usage)
-[Flash Data](#flash-data)
-[Database Sessions](#database-sessions)
-[Session Drivers](#session-drivers)
+ - [Configuration](#configuration)
+ - [Session Usage](#session-usage)
+ - [Flash Data](#flash-data)
+ - [Database Sessions](#database-sessions)
+ - [Session Drivers](#session-drivers)
 
 ## Configuration
 

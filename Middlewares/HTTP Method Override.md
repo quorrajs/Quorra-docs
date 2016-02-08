@@ -1,7 +1,7 @@
 # HTTP Method Override
 
-[Introduction](#introduction)
-[Usage](#usage)
+ - [Introduction](#introduction)
+ - [Usage](#usage)
 
 This middleware lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it. You can
 enable or disable this middleware in `app/config/middleware.js` by setting attribute `httpMethodOverride` to boolean

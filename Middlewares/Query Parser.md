@@ -1,7 +1,7 @@
 # Query Parser
 
-[Introduction](#introduction)
-[Configuration](#configuration)
+ - [Introduction](#introduction)
+ - [Configuration](#configuration)
 
 ## Introduction
 

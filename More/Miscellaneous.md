@@ -1,8 +1,8 @@
 # Miscellaneous
 
-[CSRF Protection](#csrf-protection)
-[Quorra Behind Proxies](#quorra-behind-proxies)
-[Application Locals](#application-locals)
+ - [CSRF Protection](#csrf-protection)
+ - [Quorra Behind Proxies](#quorra-behind-proxies)
+ - [Application Locals](#application-locals)
 
 ## CSRF Protection
 
