@@ -1,8 +1,12 @@
 # Quorra CLI
 
-[Installation](#installation)
 [Introduction](#introduction)
+[Installation](#installation)
 [Usage](#usage)
+
+## Introduction
+
+Quorra CLI provides a number of helpful commands for your use while developing your application.
 
 ## Installation
 
@@ -11,11 +15,6 @@ Install the Quorra cli using npm.
 ```
 npm install -g quorra-cli
 ```
-
-## Introduction
-
-Quorra CLI provides a number of helpful commands for your use while developing your application.
-
 
 ## Usage
 
