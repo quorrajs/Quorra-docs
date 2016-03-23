@@ -11,6 +11,15 @@ The logging handler for your application is registered in the app/start/global.j
 is configured to use a single log file; however, you may customize this behavior as needed. Since Quorra uses the
 popular Winston logging library, you can take advantage of the variety of handlers that Winston offers.
 
+Quorra provides some additional utility methods over winston logger so that you can easily configure log handler in
+your application.
+
+ - useFiles(FileTransportOptions)
+ - useDailyFiles(DailyRotateFileTransportOptions)
+ - useMongoDB(MongodbTransportOptions)
+ - useMail(MailTransportOptions)
+ - useConsole(ConsoleTransportOptions)
+
 For example, if you wish to use daily log files instead of a single, large file, you can make the following change to
  your start file:
 
@@ -33,7 +42,13 @@ By default, the app/start/global.js file contains an error handler for all excep
 ```javascript
 App.error(function(error, code, request, response, next)
 {
-    Log.error(error);
+    var extra = {};
+
+    if(error.stack) {
+        extra.stackTrace = error.stack;
+    }
+
+    Log.error(error.message || error, extra);
     next();
 });
 ```
