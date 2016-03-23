@@ -1,4 +1,4 @@
-# Request
+# Response
 
  - [Introduction](#introduction)
  - [Properties](#properties)
