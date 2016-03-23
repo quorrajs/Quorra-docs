@@ -82,7 +82,7 @@ Registering Application Events
 You may do pre request processing by registering before application event:
 
 ```javascript
-App.before(function(request, result, next) {
+App.before(function(request, response, next) {
 	
 	//
 
@@ -91,4 +91,4 @@ App.before(function(request, result, next) {
 ```
 
 Listeners to this event will be run before request to your application. This event can be helpful for global
-filtering or global modification of responses. You may register them in one of your start files.
+filtering or global modification of requests and responses. You may register them in one of your start files.

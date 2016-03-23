@@ -388,7 +388,7 @@ Route.bind('user', function(value, route, req, callback)
 There are two ways to manually trigger a 404 error from a route. First, you may use the App.abort method:
 
 ```javascript
-req::abort(404);
+req.abort(404);
 ```
 Second, you may throw an instance of Error with status property equal to 404.
 

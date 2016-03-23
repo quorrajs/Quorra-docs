@@ -27,7 +27,7 @@ Quorra has a few system requirements.
 ## Configuration
 
 The first thing you should do after installing Quorra is set your application key to a random string. If you installed
-Quorra via quorra-cli, this key has probably already been set for you by the `key:generate` command. Typically, this
+Quorra via quorra-cli, this key has probably already been set for you by the `generate-key` command. Typically, this
 string should be 32 characters long. The key can be set in the app.js configuration file. If the application key is
 not set, your user sessions and other encrypted data will not be secure.
 
