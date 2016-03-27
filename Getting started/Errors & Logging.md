@@ -9,7 +9,8 @@
 
 The logging handler for your application is registered in the app/start/global.js start file. By default, the logger
 is configured to use a single log file; however, you may customize this behavior as needed. Since Quorra uses the
-popular Winston logging library, you can take advantage of the variety of handlers that Winston offers.
+popular [Winston](https://github.com/winstonjs/winston) logging library, you can take advantage of the variety of
+handlers that Winston offers.
 
 Quorra provides some additional utility methods over winston logger so that you can easily configure log handler in
 your application.
@@ -24,8 +25,18 @@ For example, if you wish to use daily log files instead of a single, large file,
  your start file:
 
 ```javascript
-Log.useDailyFiles({filename: path.join(App.path.storage, 'logs/quorra.log')});
+var Log = require('positron').log;
+Log.useDailyFiles({filename: path.join(App.path.storage, 'logs/quorra.log'), level: 'silly'});
 ```
+
+Or you can manually add transport mechanism provided by winston library just like following.
+
+```javascript
+var Log = require('positron').log;
+var winston = require('winston'); // For this to work you have to install winston with command `npm install winston`
+Log.add(winston.transports.File, {filename: path.join(App.path.storage, 'logs/quorra.log'), level: 'silly'});
+```
+
 
 ### Error Detail
 
@@ -121,7 +132,4 @@ A JSON object of contextual data may also be passed to the log methods:
 Log.info('Log message', {'context': 'Other helpful information'});
 ```
 
-Winston has a variety of additional handlers you may use for logging. If needed, you may access the underlying
-Winston instance being used by Quorra:
-
-$monolog = Log::getMonolog();
+Winston has a variety of additional handlers you may use for logging.
