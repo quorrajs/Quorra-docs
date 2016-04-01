@@ -10,11 +10,14 @@
 
 Since HTTP driven applications are stateless, sessions provide a way to store information about the user across
 requests. NodeSession ships with a variety of session back-ends available for use through a clean, unified API.
-Support for back-ends such as File and databases is included out of the box.
+Support for back-ends such as Memory, File and databases is included out of the box.
 
 The session configuration is stored in app/config/session.js. Be sure to review the well documented options available
 to you in this file. By default, Quorra is configured to use the file session driver, which will work well for the
 majority of applications.
+
+warning: Memory session driver is purposely not designed for a production environment. It will leak memory under most
+ conditions, does not scale past a single process, and is meant for debugging and developing.
 
 ### Reserved Keys
 
@@ -126,5 +129,6 @@ Below is a required schema for the table:
 The session "driver" defines where session data will be stored for each request. Quorra ships with several great
 drivers out of the box:
 
+- memory - sessions will be stored in memory.
 - file - sessions will be stored in files in a specified location.
 - database - sessions will be stored in a database.
