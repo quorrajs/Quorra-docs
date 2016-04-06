@@ -1,7 +1,7 @@
 # Globals
 
  - [Overview](#overview)
- - [The app object](#the-app-object)
+ - [The app object](#the-app-objectapp)
  - [Models](#models)
 
 ## Overview

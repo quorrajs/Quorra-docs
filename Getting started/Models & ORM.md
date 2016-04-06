@@ -158,7 +158,7 @@ Model.find({ where: { name: 'foo' }, skip: 20, limit: 10, sort: 'name DESC' })
     });
 ```
 
-Find out more about querying [here](https://github.com/balderdashy/waterline-docs)
+Find out more about querying in the [waterline docs](https://github.com/balderdashy/waterline-docs).
 
 ### Waterline Aggregates
 
@@ -177,8 +177,7 @@ Movie.find()
     });
 ```
 
-Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql]
-(https://github.com/balderdashy/sails-postgresql), support the query function which will run the provided RAW
+Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql](https://github.com/balderdashy/sails-postgresql), support the query function which will run the provided RAW
 query against the database. This can sometimes be useful if you want to run complex queries and performance is very
 important.
 
@@ -193,7 +192,7 @@ Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, resul
 });
 ```
 
-Find out more about aggregates [here](https://github.com/balderdashy/waterline-docs)
+Find out more about aggregates in the [waterline docs](https://github.com/balderdashy/waterline-docs).
 
 ## Insert, Update, Delete
 
@@ -268,6 +267,7 @@ Of course, your database tables are probably related to one another. For example
 or an order could be associated to the user who placed it. Waterline makes managing and working with these associations
 easy. Waterline supports many types of associations:
 
+ - [One To One](https://github.com/balderdashy/waterline-docs/blob/master/models/associations/one-to-one.md)
  - [One To One](https://github.com/balderdashy/waterline-docs/blob/master/models/associations/one-to-one.md)
  - [One To Many](https://github.com/balderdashy/waterline-docs/blob/master/models/associations/one-to-many.md)
  - [Many To Many](https://github.com/balderdashy/waterline-docs/blob/master/models/associations/many-to-many.md)

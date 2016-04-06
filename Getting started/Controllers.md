@@ -215,7 +215,7 @@ var PhotoCommentController = BaseController.extend(function(){
 });
 ```
 
-Adding Additional Routes To Resource Controllers
+### Adding Additional Routes To Resource Controllers
 
 If it becomes necessary for you to add additional routes to a resource controller beyond the default resource routes,
  you should define those routes before your call to Route.resource:

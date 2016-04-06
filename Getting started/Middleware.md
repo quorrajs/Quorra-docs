@@ -57,11 +57,11 @@ application. Each layer can examine the request and even reject it entirely.
 
 ## Registering Middleware
 
-You can register your custom middleware with the application in `app/routes.js' file outside all routes, or you can
+You can register your custom middleware with the application in `app/routes.js` file outside all routes, or you can
 create a middleware.js file in 'app' folder and include it in the `app/start/global.js` file like `require(path.join
 (App.path.app, 'middleware'));`
 
-Syntax for registering a custom middleware is
+Syntax for registering a custom middleware is:
 
 ```javascript
 App.middleware(require('<middleware constructor>'));

@@ -1,7 +1,7 @@
 # Request Lifecycle
 
 - [Overview](#overview)
-- [Application start](#application-start-&-request-lifecycle)
+- [Application start](#application-start-amp-request-lifecycle)
 - [Start Files](#start-files)
 - [Application Events](#application-events)
 
@@ -18,7 +18,7 @@ If you don't understand all of the terms right away, don't lose heart! Just try 
 on, and your knowledge will grow as you explore other sections of the documentation.
 
 
-## Application start & request lifecycle
+## Application start & Request lifecycle
 
 Whenever a Qurra application is started index.js script in the application root will be executed. From here, Quorra
 begins the process of starting the application and listening requests. Getting a general idea for the Quorra

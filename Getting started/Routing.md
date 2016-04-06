@@ -395,8 +395,8 @@ Second, you may throw an instance of Error with status property equal to 404.
 More information on handling 404 exceptions and using custom responses for these errors may be found in the errors section of the documentation.
 
 
-### Routing To Controllers
+## Routing To Controllers
 
 Quorra allows you to not only route to Closures, but also to controller classes.
 
-See the documentation on Controllers for more details.
+See the documentation on [Controllers](/docs/1/Getting%20started/Controllers.md) for more details.

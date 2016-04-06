@@ -3,11 +3,9 @@
  - [Basic Responses](#basic-responses)
  - [Redirects](#redirects)
  - [Views](#views)
- - [View Composers](#view-composers)
  - [Special Responses](#special-responses)
- - [Response Macros](#response-macros)
 
-Read more about Quorra request object [here](response).
+Read more about Quorra request object [here](/docs/1/More/Response.md).
 
 ## Basic Responses
 
@@ -100,8 +98,8 @@ Transfer the file at path as an “attachment”, typically browsers will prompt
 Content-Disposition “filename=” parameter, aka the one that will appear in the brower dialog is set to path by
 default, however you may provide an override filename.
 
-When an error has ocurred or transfer is complete the optional callback fn is invoked. This method uses res.sendfile
-() to transfer the file.
+When an error has ocurred or transfer is complete the optional callback fn is invoked. This method uses [res.sendfile
+()](/docs/1/More/Response.md#ressendfilepath--options--fn) to transfer the file.
 
 ```javascript
 res.download(pathToFile, fileName, callback);
