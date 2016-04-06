@@ -2,7 +2,7 @@
 
  - [Installation](#installation)
  - [Routing](#routing)
- - [Creating A View](#creating-a-View)
+ - [Creating A View](#creating-a-view)
  - [Waterline ORM](#waterline-ormodm)
  - [Displaying Data](#displaying-data)
 

@@ -50,10 +50,10 @@ var input = req.input.except('credit_card');
 
 ## Cookies
 
-@todo: link to cookies middleware doc
-
 All cookies created by the Quorra framework are encrypted and signed with an authentication code, meaning they will be
-considered invalid if they have been changed by the client.
+considered invalid if they have been changed by the client. See [Cookie Parser](/docs/1/Middlewares/cookie%20parser
+.html)
+middleware for more.
 
 ### Retrieving A Cookie Value
 
