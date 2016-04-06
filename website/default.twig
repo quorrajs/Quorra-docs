@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ title }}</title>
+
+    <link rel="icon" href="{{ baseUrl }}/assets/icons/favicon.ico">
+    <link rel="stylesheet" href="{{ baseUrl }}/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ baseUrl }}/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ baseUrl }}/assets/css/prism.css">
+    <link rel="stylesheet" href="{{ baseUrl }}/assets/css/main.css">
+</head>
+<body>
+<div class="navbar main-menu navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                        class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="{{ baseUrl }}" title="QuorraJS">
+                <img src="{{ baseUrl }}/assets/images/logo.png" alt="logo" title="QuorraJS"/>
+            </a>
+        </div>
+    </div>
+</div>
+
+<main class="{{ menu ? 'container' : 'container' }}">
+    <div class="row">
+
+        {% if menu is defined %}
+
+            <nav id="sidebar" class="col-md-3 col-sm-3 col-lg-3" role="navigation">
+
+                {% for section in menu.sections %}
+                    <p class="text-muted">
+                        {{ section.name }}
+                    </p>
+
+                    <ul class="nav nav-pills nav-stacked">
+                        {% for itemId, item in section.items %}
+                            <li class="{{ itemId == currentMenu ? 'active' }}">
+                                <a href="{{ item.absoluteUrl|default(docBaseUrl ~ '/' ~ item.relativeUrl) }}">
+                                    {{ item.text|raw }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+
+            </nav>
+
+        {% endif %}
+
+        <section class="col-sm-9 col-lg-9">
+            {{ content|raw }}
+        </section>
+
+    </div>
+</main>
+
+<section id="info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Connect with us</h4>
+
+                <div class="clearfix"></div>
+                <ul class="list-inline social">
+                    <li class="wow bounceIn" data-wow-duration="1.0s" data-wow-delay="0.8s">
+                        <a href="https://github.com/quorrajs" target="_blank">
+                            <i class="fa fa-github-square"></i>
+                        </a>
+                    </li>
+                    <li class="wow bounceIn" data-wow-duration="1.0s" data-wow-delay="0.8s">
+                        <a href="https://www.facebook.com/quorrajs" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="wow bounceIn" data-wow-duration="1.0s" data-wow-delay="1.0s">
+                        <a href="https://twitter.com/quorrajs" target="_blank">
+                            <i class="fa fa-twitter-square"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="{{ baseUrl }}/assets/js/prism.js"></script>
+
+<script>
+</script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+body {
+    font-size: 15px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1080px;
+    }
+}
+
+#sidebar {
+    padding-top: 20px;
+}
+
+#sidebar p {
+    font-size: 18px;
+    padding:0 5px 0 20px!important;
+}
+
+#sidebar .text-muted {
+    margin-bottom: 5px;
+}
+
+#sidebar .nav-stacked{
+    margin-bottom: 10px;
+}
+
+.nav li {
+    margin-bottom: 0;
+}
+
+.nav li a{
+    padding:0 5px 0 20px;
+}
+main section {
+    margin-bottom: 50px;
+}
+
+#info {
+    background: #343434;
+    color: #fff
+    position: relative;
+    padding: 30px 0 10px;
+    text-align: center;
+}
+
+#info h4 {
+    margin-top: 0;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 300
+}
+
+#info p {
+    color: #fff;
+    font-size: 14px
+}
+
+.social li a {
+    font-size: 24px;
+    color: #fff
+}
+
+.social li a .fa {
+    font-size: 48px;
+    line-height: 48px
+}
+
+.social li a:hover {
+    color: #e91e63
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 25px 0;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity .2s ease;
+}
+footer:hover {
+    opacity: 1.0;
+    transition: opacity .2s ease;
+}
+footer p {
+    margin: 0;
+}
+
+h3 {
+    font-size: 23px;
+}
+
+#content img {
+    max-width: 100%;
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+@media (max-width: 960px) {
+    body {
+        font-size: 17px;
+    }
+    pre {
+        font-size: 12px;
+    }
+}
+
+.page-header {
+    margin-top: 0;
+}
+
+#sidebar .text-muted {
+    color: #bbbbbb;
+}
+
+pre {
+    padding: 0;
+    border-radius: 4px;
+    margin: 15px;
+    font-size: 15px;
+}
+pre code {
+    border: none;
+    padding: 10px;
+    display: block;
+}
+
+
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+    margin-top: 0
+}
+
+.navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar {
+    background-color: #e91e63
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+    border-color: #e91e63
+}
+
+.navbar-default .navbar-collapse.in {
+    background-color: #fff
+}
+
+.navbar-default .navbar-collapse.in .navbar-nav > li > a {
+    color: #344563
+}
+
+.navbar-default .navbar-collapse.in .navbar-nav > li > a:hover {
+    color: #ef6348
+}
+
+.main-menu.floating-menu .navbar-toggle .icon-bar {
+    background-color: #fff
+}
+
+.main-menu.floating-menu .navbar-toggle {
+    border-color: #fff
+}
+
+.progress {
+    background-color: #eee;
+    height: 30px;
+    margin-bottom: 30px;
+    border-radius: 0
+}
+
+.progress-bar {
+    line-height: 30px;
+    text-align: left;
+    padding-left: 15px;
+    font-size: 14px
+}
+
+.navbar-default .navbar-brand {
+    padding: 0 15px;
+    height: auto
+}
+
+.navbar.navbar-default {
+    padding: 15px 0;
+    background: #3367d5;
+    border: none;
+    margin: 0
+}
+
+.main-menu {
+    background: 0 0;
+    border: none;
+    transition: background .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out;
+    -webkit-transition: background .5s ease-in-out
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 7px 15px
+}
+
+.navbar-default .navbar-nav > li > a.active {
+    color: #fca1c0
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    background: 0 0;
+    color: #ef6348
+}
+.main-menu.floating-menu .navbar-toggle .icon-bar {
+    background-color: #fff
+}
+.main-menu.floating-menu .navbar-toggle {
+    border-color: #fff
+}
+.main-menu {
+    background: 0 0;
+    border: none;
+    transition: background .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out;
+    -webkit-transition: background .5s ease-in-out
+}
+.main-menu.floating-menu {
+    background: #3367d5
+}
+
+.main-menu.floating-menu .navbar-nav > li > a {
+    color: #fff
+}
+
+.main-menu.floating-menu .navbar-nav > li > a.active {
+    color: #fca1c0
+}
+
+.main-menu.floating-menu .navbar-nav > .active > a, .main-menu.floating-menu .navbar-nav > .active > a:focus, .main-menu.floating-menu .navbar-nav > .active > a:hover, .main-menu.floating-menu .navbar-nav > li > a:focus, .main-menu.floating-menu .navbar-nav > li > a:hover {
+    background: 0 0;
+    color: #fca1c0
+}
