@@ -24,7 +24,7 @@ Whenever a Qurra application is started index.js script in the application root 
 begins the process of starting the application and listening requests. Getting a general idea for the Quorra
 bootstrap process will be useful, so we'll cover that now!
 
-index.js file executes the bootstrap/start.js script with a callback argument. This file creates the new Positron
+index.js file executes the `bootstrap/start.js` script with a callback argument. This file creates the new Positron
 Application object(Positron is the core module that powers Quorra.), which serves as the backbone of Quorra application.
 
 After creating the Application object, a few project paths will be set and environment detection will be performed.
@@ -39,11 +39,11 @@ creates a NodeJS server and starts to listen to Request.
 
 So, let's summarize:
 
- - index.js file is executed.
- - bootstrap/start.js file creates Application and detects environment.
- - Internal framework/start.js file configures settings and loads core components.
- - Application app/start files are loaded.
- - Application app/routes.js file is loaded.
+ - `index.js` file is executed.
+ - `bootstrap/start.js` file creates Application and detects environment.
+ - Internal `framework/start.js` file configures settings and loads core components.
+ - Application `app/start` files are loaded.
+ - Application `app/routes.js` file is loaded.
  - Starts to listen to Request.
 
 Now that you have a good idea of how a quorra application lift a NodeJS server, let's take a closer look at request
@@ -54,21 +54,21 @@ filters and route level filters are executed from which request reaches to the r
 
 ## Start Files
 
-Your application's start files are stored at app/start. By default, two are included with your application: global.js
-and local.js.
+Your application's start files are stored at `app/start`. By default, two are included with your application: `global
+.js` and `local.js`.
 
 The global.js start file contains a few basic items by default, such as configuration of the Logger and the inclusion
-of your app/filters.js file. However, you are free to add anything to this file that you wish. It will be
-automatically included on application initialization, regardless of environment. The local.js file, on the other
+of your `app/filters.js` file. However, you are free to add anything to this file that you wish. It will be
+automatically included on application initialization, regardless of environment. The `local.js` file, on the other
 hand, is only called when the application is executing in the local environment. For more information on
 environments, check out the configuration documentation.
 
 Of course, if you have other environments in addition to local, you may create start files for those environments as
 well. They will be automatically included when your application is running in that environment. So, for example, if
-you have a `development` environment configured in your bootstrap/start.js file, you may create a app/start/development
-.js file, which will be included when application is lifted in that environment.
+you have a `development` environment configured in your `bootstrap/start.js` file, you may create a
+`app/start/development.js` file, which will be included when application is lifted in that environment.
 
-What To Place In Start Files
+### What To Place In Start Files
 
 Start files serve as a simple place to place any "bootstrapping" code. For example, you could  configure your logging
 preferences, set some js settings, etc. It's totally up to you. Of course, throwing all of your bootstrapping code

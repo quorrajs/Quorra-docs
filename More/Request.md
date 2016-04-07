@@ -62,7 +62,7 @@ For more information, issues, or concerns, see [fresh](#https://github.com/jshtt
 
 Contains the hostname derived from the Host HTTP header.
 
-When the [trust proxy setting](miscellaneous#quorra-behind-proxies) is set to a non-falsey value, the value of the
+When the [trust proxy setting](/docs/1/More/Miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the value of the
 X-Forwarded-Host header field will be
 used instead. This header can be set by the client or by the proxy.
 
@@ -70,12 +70,14 @@ used instead. This header can be set by the client or by the proxy.
 // Host: "example.com:3000"
 req.hostname
 // => "example.com"
+```
 
 ### req.ip
 
 The remote IP address of the request.
 
-When the [trust proxy setting](miscellaneous#quorra-behind-proxies) is set to a non-falsey value, the value is
+When the [trust proxy setting](/docs/1/More/Miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the
+value is
 derived from the left-most entry in the `X-Forwarded-For` header. This header can be set by the client or by the proxy.
 
 ```javascript
@@ -85,7 +87,7 @@ req.ip
 
 ### req.ips
 
-When the [trust proxy setting](miscellaneous#quorra-behind-proxies) is set to a non-falsey value, this property
+When the [trust proxy setting](/docs/1/More/Miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, this property
 contains an array of IP addresses specified in the `X-Forwarded-For` request header. Otherwise, it contains an empty
 array. This header can be set by the client or by the proxy.
 
@@ -121,7 +123,7 @@ req.path
 
 The request protocol string, http or https when requested with TLS.
 
-When the [trust proxy setting](miscellaneous#quorra-behind-proxies) is set to a non-falsey value, the value of the
+When the [trust proxy setting](/docs/1/More/Miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the value of the
 `X-Forwarded-Proto` header field will be trusted and used if present. This header can be set by the client or by the
 proxy.
 
@@ -340,20 +342,20 @@ var input = req.input.except(['username', 'password']);
 
 You may need to keep input from one request until the next request. For example, you may need to re-populate a form
 after checking it for validation errors. This will work only if you have enabled session middleware in
-(app/config/middleware.js)
+(`app/config/middleware.js`)
 
 Flashes all input items to the session
 
 ```javascript
 req.input.flash();
 ```
-Note: You may flash other data across requests using the [session](session) middleware methods.
+> **Note:** You may flash other data across requests using the [session](/docs/1/Middlewares/Session.md) middleware methods.
 
 ### req.input.flashExcept(name)
 
 You may need to keep input from one request until the next request. For example, you may need to re-populate a form
 after checking it for validation errors. This will work only if you have enabled session middleware in
-(app/config/middleware.js)
+(`app/config/middleware.js`)
 
 Flashes a subset of input items to the session
 
@@ -365,7 +367,7 @@ req.input.flashExcept('password');
 
 You may need to keep input from one request until the next request. For example, you may need to re-populate a form
 after checking it for validation errors. This will work only if you have enabled session middleware in
-(app/config/middleware.js)
+(`app/config/middleware.js`)
 
 Flashes a subset of input items to the session
 
@@ -428,7 +430,7 @@ var file = req.input.hasFile(['photo', 'fbPic']);
 
 You may need to keep input from one request until the next request. For example, you may need to re-populate a form
 after checking it for validation errors. This will work only if you have enabled session middleware in
-(app/config/middleware.js)
+(`app/config/middleware.js`)
 
 You can retrieve the old flashed data with this method.
 

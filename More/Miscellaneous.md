@@ -36,7 +36,7 @@ Route.post('profile', {'before': 'csrf', 'uses': function() {
 When running an Quorra app behind a proxy, set the configuration value `trustProxy`(app/config/request.js) to one of the
 values listed in the following table.
 
-Note: Although the app will not fail to run if the configuration value `trustProxy` is not set, it will incorrectly
+> **Note:** Although the app will not fail to run if the configuration value `trustProxy` is not set, it will incorrectly
 register the proxy’s IP address as the client IP address unless `trustProxy` is configured.
 
 |     Type     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -50,9 +50,10 @@ Setting a non-false trust proxy value results in three important changes:
 
 The value of req.hostname is derived from the value set in the X-Forwarded-Host header, which can be set by the client or by the proxy.
 
-X-Forwarded-Proto can be set by the reverse proxy to tell the app whether it is https or http or even an invalid name. This value is reflected by req.protocol.
+`X-Forwarded-Proto` can be set by the reverse proxy to tell the app whether it is https or http or even an invalid
+name. This value is reflected by req.protocol.
 
-The req.ip and req.ips values are populated with the list of addresses from X-Forwarded-For.
+The req.ip and req.ips values are populated with the list of addresses from `X-Forwarded-For`.
 
 The trust proxy setting is implemented using the [proxy-addr](https://www.npmjs.com/package/proxy-addr) package. For more information, see its documentation.
 

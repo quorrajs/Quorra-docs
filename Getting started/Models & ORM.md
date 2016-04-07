@@ -13,11 +13,11 @@ ORM/ODM called [Waterline](https://github.com/balderdashy/waterline), a datastor
 simplifies interaction with one or more databases. It provides an abstraction layer on top of the underlying
 database, allowing you to easily query and manipulate your data without writing vendor-specific integration code.
 
-Before getting started, be sure to configure a database connection in app/config/database.js.
+Before getting started, be sure to configure a database connection in `app/config/database.js`.
 
 ## Basic usage
 
-To get started, create a waterline model. Models live in the app/models directory of your application.
+To get started, create a waterline model. Models live in the `app/models` directory of your application.
 
 ### Defining An Waterline Model
 
@@ -130,7 +130,8 @@ This flag sets the schema to automatically alter the schema, drop the schema or 
  - alter - auto-migrate, but attempt to keep my existing data (experimental).
  - drop - wipe/drop ALL my data and rebuild models every time I run Quorra server.
 
-In a production environment (NODE_ENV==="production") Quorra always uses migrate:"safe" to protect inadvertent deletion
+In a production environment (`NODE_ENV==="production"`) Quorra always uses `migrate: "safe"` to protect inadvertent
+deletion
  of your data.
 
 ### Retrieving All Models
@@ -275,7 +276,7 @@ easy. Waterline supports many types of associations:
 
 ## Querying Associations
 
-`.populate( foreignKey, [query] )` a chainable method is used between .find()/.update() and .exec() in order to
+`.populate( foreignKey, [query] )` a chainable method is used between `.find()/.update()` and `.exec()` in order to
 retrieve records associated with the model being queried. You must supply the Foreign Key specified in your model
 config.
 

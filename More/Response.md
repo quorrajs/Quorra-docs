@@ -32,8 +32,7 @@ Route.get('/user/{id}', function(request, response) {
 ### res.locals
 
 An object that contains response local variables scoped to the request, and therefore available only to the view(s)
-rendered during that request / response cycle (if any). Otherwise, this property is identical to app.locals
-(miscellaneous#application-locals).
+rendered during that request / response cycle (if any). Otherwise, this property is identical to [app.locals](/docs/1/More/Miscellaneous.md#application-locals).
 
 This property is useful for exposing request-level information such as the request path name, authenticated user,
 user settings, and so on.
@@ -78,7 +77,7 @@ This method may be used at any time during the request's lifecycle.
 Appends the specified value to the HTTP response header field. If the header is not already set, it creates the
 header with the specified value. The value parameter can be a string or an array.
 
-Note: calling res.set() after res.append() will reset the previously-set header value.
+> **Note:** calling `res.set()` after `res.append()` will reset the previously-set header value.
 
 ```javascript
 res.append('Link', ['<http://localhost/>', '<http://localhost:3000/>']);
@@ -287,7 +286,7 @@ res.status(500).json({ error: 'message' });
 
 ### res.jsonp([body])
 
-Sends a JSON response with JSONP support. This method is identical to res.json(), except that it opts-in to JSONP
+Sends a JSON response with `JSONP` support. This method is identical to `res.json()`, except that it opts-in to `JSONP`
 callback support.
 
 ```javascript
@@ -301,10 +300,10 @@ res.status(500).jsonp({ error: 'message' });
 // => { "error": "message" }
 ```
 
-By default, the JSONP callback name is simply `callback`. Override this with the `jsonpCallbackName` configuration in
+By default, the `JSONP` callback name is simply `callback`. Override this with the `jsonpCallbackName` configuration in
 `app/config/response.js`.
 
-The following are some examples of JSONP responses using the same code:
+The following are some examples of `JSONP` responses using the same code:
 
 ```javascript
 // ?callback=foo
@@ -372,28 +371,28 @@ Redirects can be a fully-qualified URL for redirecting to a different site:
 res.redirect('http://google.com');
 ```
 
-Redirects can be relative to the root of the host name. For example, if the application is on "http://example
-.com/admin/post/new", the following would redirect to the URL "http://example.com/admin":
+Redirects can be relative to the root of the host name. For example, if the application is on `http://example
+.com/admin/post/new`, the following would redirect to the URL `http://example.com/admin`:
 
 ```javascript
 res.redirect('/admin');
 ```
 
-Redirects can be relative to the current URL. For example, from "http://example.com/blog/admin/" (notice the trailing
-slash), the following would redirect to the URL "http://example.com/blog/admin/post/new".
+Redirects can be relative to the current URL. For example, from `http://example.com/blog/admin/` (notice the trailing
+slash), the following would redirect to the URL `http://example.com/blog/admin/post/new`.
 
 ```javascript
 res.redirect('post/new');
 ```
 
-Redirecting to "post/new" from "http://example.com/blog/admin" (no trailing slash), will redirect to "http://example
-.com/blog/post/new".
+Redirecting to `post/new` from `http://example.com/blog/admin` (no trailing slash), will redirect to `http://example
+.com/blog/post/new`.
 
 If you found the above behavior confusing, think of path segments as directories (with trailing slashes) and files,
 it will start to make sense.
 
-Path-relative redirects are also possible. If you were on "http://example.com/admin/post/new", the following would
-redirect to "http//example.com/admin/post":
+Path-relative redirects are also possible. If you were on `http://example.com/admin/post/new`, the following would
+redirect to `http//example.com/admin/post`:
 
 ```javascript
 res.redirect('..');
@@ -587,7 +586,7 @@ Renders a view and sends the rendered HTML string to the client. Optional parame
  - callback, a callback function. If provided, the method returns both the possible error and rendered string, but does
  not perform an automated response. When an error occurs, the method invokes next(err) internally.
 
-Note: The local variable `cache` enables view caching. Set it to true, to cache the view or caching will be
+> **Note:** The local variable `cache` enables view caching. Set it to true, to cache the view or caching will be
 determined by the configuration `cache` in `app/config/view.js`.
 
 ```javascript

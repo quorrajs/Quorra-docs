@@ -47,11 +47,12 @@ res.redirect('../login');
 ## Views
 
 Views typically contain the HTML of your application and provide a convenient way of separating your controller and
-domain logic from your presentation logic. Views are stored in the resources/views directory.
+domain logic from your presentation logic. Views are stored in the `resources/views` directory.
 
-Quorra uses Jade as its default template engine. Quorra's template implementation relies on Node's [consolidate]
-(https://www.npmjs.org/package/consolidate) library. Hence Quorra supports all the template engines that consolidate
-library supports. You can configure your template engine settings in app/config/view.js configuration file.
+Quorra uses Jade as its default template engine. Quorra's template implementation relies on Node's
+[consolidate](https://www.npmjs.org/package/consolidate) library. Hence Quorra supports all the template engines that
+ consolidate library supports. You can configure your template engine settings in `app/config/view.js` configuration
+ file.
 
 A simple view could look something like this:
 
@@ -89,16 +90,16 @@ res.json({'name': 'Steve', 'state': 'CA'});
 ```javascript
 res.jsonp({'name': 'Steve', 'state': 'CA'})
 ```
-By default the JSONP callback name is simply callback, however you may alter this with the jsonp callback name
-setting in app/config/response.js.
+By default the JSONP callback name is simply callback, however you may alter this with the `jsonp` callback name
+setting in `app/config/response.js`.
 
 ### Creating A File Download Response
 
 Transfer the file at path as an “attachment”, typically browsers will prompt the user for download. The
-Content-Disposition “filename=” parameter, aka the one that will appear in the brower dialog is set to path by
+Content-Disposition “filename=” parameter, aka the one that will appear in the browser dialog is set to path by
 default, however you may provide an override filename.
 
-When an error has ocurred or transfer is complete the optional callback fn is invoked. This method uses [res.sendfile
+When an error has occurred or transfer is complete the optional callback fn is invoked. This method uses [res.sendfile
 ()](/docs/1/More/Response.md#ressendfilepath--options--fn) to transfer the file.
 
 ```javascript

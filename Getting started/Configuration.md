@@ -7,7 +7,7 @@
 
 ## Introduction
 
-All of the configuration files for the Quorra framework are stored in the app/config directory. Each option in every
+All of the configuration files for the Quorra framework are stored in the `app/config` directory. Each option in every
 file is documented, so feel free to look through the files and get familiar with the options available to you.
 
 Sometimes you may need to access configuration values at run-time. You may do so using the config object:
@@ -45,7 +45,8 @@ server. It is easy to accomplish this using environment based configuration.
 
 Simply create a folder within the config directory that matches your environment name, such as local. Next, create
 the configuration files you wish to override and specify the options for that environment. For example, to override
-the session driver for the local environment, you would create a session.js file in app/config/local with the following
+the session driver for the local environment, you would create a session.js file in `app/config/local` with the
+following
 content:
 
 ```javascript
@@ -56,7 +57,7 @@ var config = {
 
 module.exports = config;
 ```
-Note: Do not use 'testing' as an environment name. This is reserved for unit testing.
+> **Note:** Do not use 'testing' as an environment name. This is reserved for unit testing.
 Notice that you do not have to specify every option that is in the base configuration file, but only the options you
 wish to override. The environment configuration files will "cascade" over the base files.
 
@@ -73,7 +74,7 @@ var env = app.detectEnvironment({
 
 });
 ```
-In this example, 'local' is the name of the environment and 'your-machine-name' is the hostname of your server. On
+In this example, 'local' is the name of the environment and `your-machine-name` is the hostname of your server. On
 Linux and Mac, you may determine your hostname using the hostname terminal command.
 
 If you need more flexible environment detection, you may pass a Closure to the detectEnvironment method, allowing you
@@ -86,7 +87,7 @@ var env = app.detectEnvironment(function()
 });
 ```
 
-Note: If you don't wish to use Quorra's machine based environment detection at all you can just set NODE_ENV to
+> **Note:** If you don't wish to use Quorra's machine based environment detection at all you can just set `NODE_ENV` to
 whatever you wish from your commandline also, or pass commandline argument `--env development` when you run Quorra app.
 This will override whatever you configure for the environment detection in the `bootstrap/start.js` file.
 
@@ -120,9 +121,9 @@ For "real" applications, it is advisable to keep all of your sensitive configura
  files whenever possible. So, where should we place them? Thankfully, Quorra provides a very simple solution to
  protecting these types of configuration items using "dot" files.
 
-First, configure your application to recognize your machine as being in the local environment. Next, create a .env
-.local.js file within the root of your project, which is usually the same directory that contains your package.json
-file. The .env.local.php should return an array of key-value pairs, much like a typical Quorra configuration file:
+First, configure your application to recognize your machine as being in the local environment. Next, create a `.env
+.local.js` file within the root of your project, which is usually the same directory that contains your package.json
+file. The `.env.local.php` should return an array of key-value pairs, much like a typical Quorra configuration file:
 
 ```javascript
 var config = {
@@ -141,22 +142,22 @@ variable. You may now reference these globals from within your configuration fil
 key: process.env.TEST_STRIPE_KEY
 ```
 
-Be sure to add the .env.local.js file to your .gitignore file. This will allow other developers on your team to create
+Be sure to add the `.env.local.js` file to your .gitignore file. This will allow other developers on your team to create
  their own local environment configuration, as well as hide your sensitive configuration items from source control.
 
 Now, on your production server, create a .env.js file in your project root that contains the corresponding values for
-your production environment. Like the .env.local.js file, the production .env.js file should never be included in
+your production environment. Like the `.env.local.js` file, the production `.env.js` file should never be included in
 source control.
 
-Note: You may create a file for each environment supported by your application. For example, the development
-environment will load the .env.development.js file if it exists. However, the production environment always uses the
-.env.js file.
+> **Note:** You may create a file for each environment supported by your application. For example, the development
+environment will load the `.env.development.js` file if it exists. However, the production environment always uses the
+`.env.js` file.
 
 ## Maintenance Mode
 
 When your application is in maintenance mode, a custom view will be displayed for all routes into your application.
 This makes it easy to "disable" your application while it is updating or when you are performing maintenance. A call
-to the `App.down` method is already present in your app/start/global.js file. The response from this method will be
+to the `App.down` method is already present in your `app/start/global.js` file. The response from this method will be
 sent to users when your application is in maintenance mode.
 
 To enable maintenance mode, simply execute the `down` Quorra-cli command:
@@ -172,7 +173,7 @@ quorra up
 ```
 
 To show a custom view when your application is in maintenance mode, you may add something like the following to your
- application's app/start/global.js file:
+ application's `app/start/global.js` file:
 
 ```javascript
 App.down(function(req, res, next)

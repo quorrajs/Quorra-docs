@@ -7,7 +7,7 @@
 ## Configuration
 
 Quorra provides a clean, simple API over the popular [nodemailer](https://github.com/nodemailer/nodemailer) library.
-The mail configuration file is app/config/mail.js, and contains options allowing you choose nodemailer transport
+The mail configuration file is `app/config/mail.js`, and contains options allowing you choose nodemailer transport
 diver, driver configuration as well as set a global from address for all messages delivered by the library. You may
 use any nodemailer trasnport you wish.
 
@@ -31,8 +31,8 @@ Mail.send('emails/welcome', {'key': 'value'}, {'to': 'email'}, function(err, inf
 ```
 The first argument passed to the send method is the name of the view that should be used as the e-mail body. The
 second is the data to be passed to the view, often as an object where the data items are available to the view by key.
-The third is the nodemailer mail options like to, cc, attachments etc. The list of available options can be found [here]
-(https://github.com/nodemailer/nodemailer#e-mail-message-fields). The fourth is a callback method allowing you to
+The third is the nodemailer mail options like to, cc, attachments etc. The list of available options can be found
+[here](https://github.com/nodemailer/nodemailer#e-mail-message-fields). The fourth is a callback method allowing you to
 receive the response from nodemailer after email is sent.
 
 You may also specify a plain text view to use in addition to an HTML view:

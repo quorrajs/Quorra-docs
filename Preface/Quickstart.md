@@ -20,7 +20,7 @@ dependencies installed.
 
 ### Permissions
 
-Quorra may require one set of permissions to be configured: folders within app/storage require write access by the web
+Quorra may require one set of permissions to be configured: folders within `app/storage` require write access by the web
 server.
 
 ### Serving Quorra
@@ -43,13 +43,13 @@ You can configure your default Quorra port in `app/config/app.js`
 
 After installing the framework, take a glance around the project to familiarize yourself with the directory structure.
 The app directory contains folders such as controllers, and models. Most of your application's code will reside
-somewhere in this directory. You may also wish to explore the app/config directory and the configuration options that
+somewhere in this directory. You may also wish to explore the `app/config` directory and the configuration options that
 are available to you.
 
 ## Routing
 
 To get started, let's create our first route. In Quorra, the simplest route is a route to a Closure. Pop open the
-app/routes.js file and add the following route to the bottom of the file:
+`app/routes.js` file and add the following route to the bottom of the file:
 
 ```javascript
 Route.get('users', function(req, res)
@@ -119,7 +119,7 @@ ORM/ODM called [Waterline](https://github.com/balderdashy/waterline), a datastor
 simplifies interaction with one or more databases.
 
 First, let's define a model. An waterline model can be used to query an associated database table. Don't worry, it
-will all make sense soon! Models are typically stored in the app/models directory. Let's define a User.js model in
+will all make sense soon! Models are typically stored in the `app/models` directory. Let's define a `User.js` model in
 that directory like so:
 
 ```javascript
@@ -138,7 +138,7 @@ Note that we do not have to tell Waterline which table to use.
 Using your preferred database administration tool, insert a few rows into your user table, and we'll use Waterline to
 retrieve them and pass them to our view.
 
-Now let's modify our /users route to look like this:
+Now let's modify our `/users` route to look like this:
 
 ```javascript
 Route.get('users', function(req, res)
@@ -167,7 +167,7 @@ block content
     p= val.name
 ```
 
-Now, you should be able to hit the /users route and see the names of your users displayed in the response.
+Now, you should be able to hit the `/users` route and see the names of your users displayed in the response.
 
 This is just the beginning. In this tutorial, you've seen the very basics of Quorra, but there are so many more
 exciting things to learn. Keep reading through the documentation and dig deeper into the powerful features of Quorra

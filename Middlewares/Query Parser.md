@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Query parser middleware deserialize a request url query string and stores in `req.query' as an object and is used by
+Query parser middleware deserialize a request url query string and stores in `req.query` as an object and is used by
 various method's provided by the Quorra's request object.
 
 ## Configuration

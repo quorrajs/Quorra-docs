@@ -3,6 +3,8 @@
  - [Introduction](#introduction)
  - [Usage](#usage)
 
+## Introduction
+
 This middleware lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it. You can
 enable or disable this middleware in `app/config/middleware.js` by setting attribute `httpMethodOverride` to boolean
 value.

@@ -8,10 +8,10 @@
 
 ## Basic Controllers
 
-Instead of defining all of your route-level logic in a single routes.js file, you may wish to organize this behavior
+Instead of defining all of your route-level logic in a single `routes.js` file, you may wish to organize this behavior
  using Controllers. Controllers can group related route logic into a single file.
 
-Controllers are typically stored in the app/controllers directory and loaded to the application based on the routes
+Controllers are typically stored in the `app/controllers` directory and loaded to the application based on the routes
 declared in the routes.js. However, controllers can technically live in any directory or any sub-directory. Route
 declarations are dependent on the location of the controller folder on disk. Default namespace for controllers is
 `controllers`. So if you wish to add add controller file in any other path you have to provide namespace
@@ -36,7 +36,7 @@ var UserController = BaseController.extend(function(){
 });
 ```
 
-All controllers should extend the BaseController. The BaseController is also stored in the app/controllers directory,
+All controllers should extend the BaseController. The BaseController is also stored in the `app/controllers` directory,
  and may be used as a place to put shared controller logic. The BaseController extends the framework's Controller.
  Now, we can route to this controller action like so:
 
@@ -57,7 +57,7 @@ You may also specify names on controller routes:
 Route.get('foo', {'uses': 'FooController@method', 'as': 'name'});
 ```
 
-To generate a URL to a controller action, you may use the URL.action method:
+To generate a URL to a controller action, you may use the `URL.action` method:
 
 ```javascript
 var URL = App.url;
@@ -100,7 +100,7 @@ var UserController = BaseController.extend(function(){
 });
 ```
 
-If you would like to use another method on the controller as a filter, you may use @ syntax to define the filter:
+If you would like to use another method on the controller as a filter, you may use `@`syntax to define the filter:
 
 ```javascript
 var BaseController = require('../BaseController');
@@ -118,9 +118,12 @@ var UserController = BaseController.extend(function(){
 ## Implicit Controllers
 
 Quorra allows you to easily define a single route to handle every action in a controller. First, define the route using
-the Route.controller method:
+the `Route.controller` method:
 
+```javascript
 Route.controller('users', 'UserController');
+```
+
 The controller method accepts two arguments. The first is the base URI the controller handles, while the second is the class name of the controller. Next, just add methods to your controller, prefixed with the HTTP verb they respond to:
 
 ```javascript
@@ -144,7 +147,8 @@ var UserController = BaseController.extend(function(){
 
 The index methods will respond to the root URI handled by the controller, which, in this case, is users.
 
-If your controller action contains multiple words, you may access the action using "dash" syntax in the URI. For example, the following controller action on our UserController would respond to the users/admin-profile URI:
+If your controller action contains multiple words, you may access the action using "dash" syntax in the URI. For
+example, the following controller action on our UserController would respond to the `users/admin-profile` URI:
 
 ```javascript
     this.getAdminProfile = function(req, res, next) {}
@@ -156,7 +160,10 @@ Resource controllers make it easier to build RESTful controllers around resource
 
 To register a resourceful route to the controller:
 
+```javascript
 Route.resource('photo', 'PhotoController');
+```
+
 This single route declaration creates multiple routes to handle a variety of RESTful actions on the photo resource.
 
 Actions Handled By Resource Controller
@@ -202,7 +209,7 @@ Route.resource('photos.comments', 'PhotoCommentController');
 
 This route will register a "nested" resource that may be accessed with URLs like the following:
 
-photos/{photoResource}/comments/{commentResource}.
+`photos/{photoResource}/comments/{commentResource}`.
 
 ```javascript
 var BaseController = require('../BaseController');

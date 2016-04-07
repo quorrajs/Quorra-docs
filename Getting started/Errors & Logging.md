@@ -7,7 +7,7 @@
 
 ## Configuration
 
-The logging handler for your application is registered in the app/start/global.js start file. By default, the logger
+The logging handler for your application is registered in the `app/start/global.js` start file. By default, the logger
 is configured to use a single log file; however, you may customize this behavior as needed. Since Quorra uses the
 popular [Winston](https://github.com/winstonjs/winston) logging library, you can take advantage of the variety of
 handlers that Winston offers.
@@ -44,7 +44,7 @@ By default, error detail is enabled for your application. This means that when a
 error page with a detailed stack trace and error message. You may turn off error details by setting the debug option
 in your app/config/app.js file to false.
 
-Note: It is strongly recommended that you turn off error detail in a production environment.
+> **Note:** It is strongly recommended that you turn off error detail in a production environment.
 
 ## Handling Errors
 
@@ -73,7 +73,7 @@ execution of the other registered handlers by choose to not call the next callba
 
 There is no default "home" for error handler registrations. Quorra offers you freedom in this area. One option is to
 define the handlers in your start/global.js file. In general, this is a convenient location to place any
-"bootstrapping" code. If that file is getting crowded, you could create an app/errors.js file, and require that file
+"bootstrapping" code. If that file is getting crowded, you could create an `app/errors.js` file, and require that file
 from your start/global.js script.
 
 ## HTTP Exceptions

@@ -25,7 +25,7 @@ for each language supported by the application with language short code as file 
 ```
 
 Language files will be generated automatically on-the-fly when first used in your app. You can turn this off if  you
-don't want to write new locale information to disk in the app/config/lang.js file.
+don't want to write new locale information to disk in the `app/config/lang.js` file.
 
 ### Example Language File
 
@@ -39,7 +39,7 @@ Language files are simply json file with keyed strings. For example:
 
 ### Changing The Default Language At Runtime
 
-The default language for your application is stored in the app/config/lang.js configuration file. You may change the
+The default language for your application is stored in the `app/config/lang.js` configuration file. You may change the
 active language at any time using the `App.setLocale` method:
 
 ```javascript
@@ -56,7 +56,7 @@ req.setLocale('es');
 
 You may also configure "fallbacks" for each language that you use in your application, which will be used when the
 active language does not contain a given language line. Like the default language, the fallback language is also
-configured in the app/config/lang.js configuration file:
+configured in the `app/config/lang.js` configuration file:
 
 ```javascript
     // fall back from Dutch to German
@@ -101,7 +101,7 @@ __({phrase: 'Hello %s', locale: 'fr'}, 'Marcus'); // Salut Marcus
 
 In addition to the traditional, linear translation lists, i18n also supports hierarchical translation catalogs.
 
-To enable this feature, be sure to set objectNotation to true in language configuration file. Note: If you can't or
+To enable this feature, be sure to set objectNotation to true in language configuration file. > **Note:** If you can't or
 don't want to use . as a delimiter, set objectNotation to any other delimiter you like.
 
 Instead of calling `__("Hello")` you might call `__("greeting.formal")` to retrieve a formal greeting from a translation

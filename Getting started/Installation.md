@@ -32,14 +32,14 @@ string should be 32 characters long. The key can be set in the app.js configurat
 not set, your user sessions and other encrypted data will not be secure.
 
 Quorra needs almost no other configuration out of the box. You are free to get started developing! However, you may
-wish to review the app/config/app.js file and its documentation. It contains several options such as timezone and
+wish to review the `app/config/app.js` file and its documentation. It contains several options such as timezone and
 locale that you may wish to change according to your application.
 
 Once Quorra is installed, you should also configure your local environment. This will allow you to receive detailed
 error messages when developing on your local machine. By default, detailed error reporting is disabled in your
 production configuration file.
 
-Note: You should never have `app.debug` set to true for a production application. Never, ever do it.
+> **Note:** You should never have `app.debug` set to true for a production application. Never, ever do it.
 
 ### Permissions
 
@@ -49,4 +49,4 @@ server.
 ### Paths
 
 Several of the framework directory paths are configurable. To change the location of these directories, check out the
- bootstrap/paths.js file.
+ `bootstrap/paths.js` file.

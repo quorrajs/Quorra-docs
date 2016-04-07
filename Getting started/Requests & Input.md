@@ -99,7 +99,7 @@ req.input.old('username');
 ```javascript
 var file = req.input.file('photo');
 ```
-For example if a file field was named “image”, and a file was uploaded, req.input.file('image') would return
+For example if a file field was named “image”, and a file was uploaded, `req.input.file('image')` would return
 following File object:
 
 ```javascript

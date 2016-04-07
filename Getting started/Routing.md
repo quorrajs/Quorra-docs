@@ -13,7 +13,8 @@
 
 ## Basic Routing
 
-Most of the routes for your application will be defined in the app/routes.js file. The simplest Quorra routes consist of a URI and a Closure callback.
+Most of the routes for your application will be defined in the `app/routes.js` file. The simplest Quorra routes
+consist of a URI and a Closure callback.
 
 ### Accessing application router instance
 
@@ -160,7 +161,8 @@ Route.filter('foo', function(req, res, next)
 
 ## Route Filters
 
-Route filters provide a convenient way of limiting access to a given route, which is useful for creating areas of your site which require authentication. You can register your application filters in the app/filters.js file.
+Route filters provide a convenient way of limiting access to a given route, which is useful for creating areas of
+your site which require authentication. You can register your application filters in the `app/filters.js` file.
 
 Defining A Route Filter
 
@@ -240,7 +242,8 @@ Route.filter('admin', function(req, res, next)
 Route.when('admin/*', 'admin');
 ```
 
-In the example above, the admin filter would be applied to all routes beginning with admin/. The asterisk is used as a wildcard, and will match any combination of characters.
+In the example above, the admin filter would be applied to all routes beginning with `admin/`. The asterisk is used as
+ a wildcard, and will match any combination of characters.
 
 You may also constrain pattern filters by HTTP verbs:
 
@@ -359,10 +362,11 @@ Route.get('profile/{user}', function(req, res, user)
     //
 });
 ```
-Since we have bound the {user} parameter to the User model, a User instance will be injected into the route. So, for
-example, a request to profile/1 will inject the User instance which has an ID of 1.
+Since we have bound the `{user}` parameter to the User model, a User instance will be injected into the route. So, for
+example, a request to `profile/1` will inject the User instance which has an ID of 1.
 
-Note: If a matching model instance is not found in the database, a 404 error will be thrown.
+> **Note:** If a matching model instance is not found in the database, a 404 error will be thrown.
+
 If you wish to specify your own "not found" behavior, you may pass a callback as the third argument to the model method:
 
 ```javascript
@@ -372,7 +376,7 @@ Route.model('user', 'User', function(req, res, next)
 });
 ```
 
-Sometimes you may wish to use your own resolver for route parameters. Simply use the Route::bind method:
+Sometimes you may wish to use your own resolver for route parameters. Simply use the `Route::bind` method:
 
 ```javascript
 Route.bind('user', function(value, route, req, callback)
