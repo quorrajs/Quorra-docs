@@ -15,7 +15,7 @@ Sometimes you may need to access configuration values at run-time. You may do so
 ### Accessing A Configuration Value
 
 ```javascript
-var Config = require('positron').config;
+var Config = App.config;
 Config.get('app.timezone');
 ```
 
@@ -97,8 +97,6 @@ This will override whatever you configure for the environment detection in the `
 You may access the current application environment via the environment method:
 
 ```javascript
-var App = require('positron');
-
 var environment = App.environment();
 ```
 

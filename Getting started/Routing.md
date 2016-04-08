@@ -19,7 +19,7 @@ consist of a URI and a Closure callback.
 ### Accessing application router instance
 
 ```javascript
-var Route = require('positron').router;
+var Route = App.router;
 ```
 
 ### Basic GET Route
@@ -76,7 +76,7 @@ Route.get('foo', {'https': true, uses: function(req, res)
 Often, you will need to generate URLs to your routes, you may do so using the URL.to method:
 
 ```javascript
-var URL = require('positron').url;
+var URL = App.url;
 var url = URL.to('foo');
 ```
 

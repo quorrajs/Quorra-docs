@@ -12,7 +12,7 @@ Read more about Quorra request object [here](/docs/1/More/Response.md).
 ### Returning Strings From Routes
 
 ```javascript
-var Route = require('positron').router;
+var Route = App.router;
 Route.get('/', function(req, res)
 {
     res.send('Hello World');

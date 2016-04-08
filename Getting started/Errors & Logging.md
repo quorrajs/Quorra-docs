@@ -25,14 +25,14 @@ For example, if you wish to use daily log files instead of a single, large file,
  your start file:
 
 ```javascript
-var Log = require('positron').log;
+var Log = App.log;
 Log.useDailyFiles({filename: path.join(App.path.storage, 'logs/quorra.log'), level: 'silly'});
 ```
 
 Or you can manually add transport mechanism provided by winston library just like following.
 
 ```javascript
-var Log = require('positron').log;
+var Log = App.log;
 var winston = require('winston'); // For this to work you have to install winston with command `npm install winston`
 Log.add(winston.transports.File, {filename: path.join(App.path.storage, 'logs/quorra.log'), level: 'silly'});
 ```
@@ -115,7 +115,6 @@ app/storage/logs/quorra.log.
 You may write information to the log like so:
 
 ```javascript
-var App = require('positron');
 var Log = App.log;
 
 Log.info('This is some useful information.');
