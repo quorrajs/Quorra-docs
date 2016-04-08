@@ -55,7 +55,7 @@ Route.match(['GET', 'POST'], '/', function(req, res)
 ### Registering A Route Responding To Any HTTP Verb
 
 ```javascript
-Route.any('foo', function()
+Route.any('foo', function(req, res)
 {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Hello World');
@@ -147,12 +147,12 @@ Route.get('user/{id}', function(req, res, id)
 
 ### Accessing A Route Parameter Value
 
-If you need to access a route parameter value outside of a route, you may use the req.parameter method:
+If you need to access a route parameter value outside of a route, you may use the `req.routeParameter` method:
 
 ```javascript
 Route.filter('foo', function(req, res, next)
 {
-    if (req.parameter('id') == 1)
+    if (req.routeParameter('id') == 1)
     {
         //
     }
@@ -171,9 +171,11 @@ var URL = App.url;
 
 Route.filter('old', function(req, res, next)
 {
-    if (req.get('age') < 200)
+    if (req.input.get('age') < 200)
     {
         res.redirect(URL.to('home'));
+    } else {
+        next();
     }
 });
 ```

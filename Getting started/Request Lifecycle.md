@@ -77,7 +77,7 @@ into your start files can get messy.
 
 ## Application Events
 
-Registering Application Events
+### Registering Application Events
 
 You may do pre request processing by registering before application event:
 

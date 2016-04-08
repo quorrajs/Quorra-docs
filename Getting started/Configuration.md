@@ -121,7 +121,7 @@ For "real" applications, it is advisable to keep all of your sensitive configura
 
 First, configure your application to recognize your machine as being in the local environment. Next, create a `.env
 .local.js` file within the root of your project, which is usually the same directory that contains your package.json
-file. The `.env.local.php` should return an array of key-value pairs, much like a typical Quorra configuration file:
+file. The `.env.local.js` should return an array of key-value pairs, much like a typical Quorra configuration file:
 
 ```javascript
 var config = {

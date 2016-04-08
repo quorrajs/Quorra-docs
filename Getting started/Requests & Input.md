@@ -94,6 +94,9 @@ req.input.old('username');
 
 ## Files
 
+> **Note:** The bodyParser middleware included with Quorra only handles JSON and urlencoded form submissions, not multipart. For
+file methods to work you may need to add additional file parsing middleware to your application.
+
 ### Retrieving An Uploaded File
 
 ```javascript

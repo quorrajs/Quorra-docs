@@ -379,7 +379,7 @@ req.input.flashOnly('username', 'email');
 
 Retrieves a file from the request.
 
-The bodyParser middleware included with Quorra only handles JSON and urlencoded form submissions, not multipart. For
+> **Note:** The bodyParser middleware included with Quorra only handles JSON and urlencoded form submissions, not multipart. For
 this method to work you may need to add additional file parsing middleware to your application.
 
 ```javascript
