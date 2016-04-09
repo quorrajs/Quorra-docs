@@ -1,7 +1,7 @@
 # Base URL of the published website
 baseUrl: https://quorrajs.org
 
-docBaseUrl: https://quorrajs.org/docs/v1
+docBaseUrl: /docs/v1
 
 # Used to link to the GitHub project
 github:
@@ -19,82 +19,82 @@ menu:
             items:
                 home:
                   text: Quickstart
-                  relativeUrl: Preface/quickstart.html
+                  relativeUrl: preface/quickstart.html
         getting-started:
             name: Getting started
             items:
                 installation:
                   text: Installation
-                  relativeUrl: Getting started/installation.html
+                  relativeUrl: getting-started/installation.html
                 configuration:
                   text: Configuration
-                  relativeUrl: Getting started/configuration.html
+                  relativeUrl: getting-started/configuration.html
                 request lifecycle:
                   text: Request Lifecycle
-                  relativeUrl: Getting started/request lifecycle.html
+                  relativeUrl: getting-started/request-lifecycle.html
                 routing:
                   text: Routing
-                  relativeUrl: Getting started/routing.html
+                  relativeUrl: getting-started/routing.html
                 requests & input:
                   text: Requests & Input
-                  relativeUrl: Getting started/requests & input.html
+                  relativeUrl: getting-started/requests-&-input.html
                 views & responses:
                   text: Views & Responses
-                  relativeUrl: Getting started/views & responses.html
+                  relativeUrl: getting-started/views-&-responses.html
                 controllers:
                   text: Controllers
-                  relativeUrl: Getting started/controllers.html
+                  relativeUrl: getting-started/controllers.html
                 errors & logging:
                   text: Errors & Logging
-                  relativeUrl: Getting started/errors & logging.html
+                  relativeUrl: getting-started/errors-&-logging.html
                 models & orm:
                   text: Models & ORM
-                  relativeUrl: Getting started/models & orm.html
+                  relativeUrl: getting-started/models-&-orm.html
                 globals:
                   text: Globals
-                  relativeUrl: Getting started/globals.html
+                  relativeUrl: getting-started/globals.html
                 middleware:
                   text: Middleware
-                  relativeUrl: Getting started/middleware.html
+                  relativeUrl: getting-started/middleware.html
         learning more:
             name: Lerning more
             items:
                 mail:
                   text: Mail
-                  relativeUrl: More/mail.html
+                  relativeUrl: more/mail.html
                 request object:
                   text: Request Object
-                  relativeUrl: More/request.html
+                  relativeUrl: more/request.html
                 response object:
                   text: Response Object
-                  relativeUrl: More/response.html
+                  relativeUrl: more/response.html
                 body parser:
                   text: Body Parser
-                  relativeUrl: Middlewares/body parser.html
+                  relativeUrl: middlewares/body-parser.html
                 query parser:
                   text: Query Parser
-                  relativeUrl: Middlewares/query parser.html
+                  relativeUrl: middlewares/query-parser.html
                 cookie parser:
                   text: Cookie Parser
-                  relativeUrl: Middlewares/cookie parser.html
+                  relativeUrl: middlewares/cookie-parser.html
                 session:
                   text: Session
-                  relativeUrl: Middlewares/session.html
+                  relativeUrl: middlewares/session.html
                 localization:
                   text: Localization
-                  relativeUrl: Middlewares/localization.html
+                  relativeUrl: middlewares/localization.html
                 http method override:
                   text: HTTP Method Override
-                  relativeUrl: Middlewares/http method override.html
+                  relativeUrl: middlewares/http-method-override.html
                 serve static:
                   text: Server Static
-                  relativeUrl: Middlewares/serve static.html
+                  relativeUrl: middlewares/serve-static.html
                 miscellanous:
                   text: Miscellaneous
-                  relativeUrl: More/miscellaneous.html
+                  relativeUrl: more/miscellaneous.html
         other:
             name: Quorra CLI
             items:
               home:
                 text: Overview
-                relativeUrl: Quorra CLI/overview.html
+                relativeUrl: quorra-cli/overview.html

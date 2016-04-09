@@ -6,7 +6,7 @@
  - [Files](#files)
  - [Request Information](#request-information)
 
-Read more about Quorra request object [here](/docs/1/More/Request.md).
+Read more about Quorra request object [here](/docs/v1/more/request.md).
 
 ## Basic Input
 
@@ -51,7 +51,7 @@ var input = req.input.except('credit_card');
 ## Cookies
 
 All cookies created by the Quorra framework are encrypted and signed with an authentication code, meaning they will be
-considered invalid if they have been changed by the client. See [Cookie Parser](/docs/1/Middlewares/Cookie%20Parser
+considered invalid if they have been changed by the client. See [Cookie Parser](/docs/v1/middlewares/cookie-parser
 .html) middleware for more.
 
 ### Retrieving A Cookie Value
