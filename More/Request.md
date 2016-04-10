@@ -62,7 +62,7 @@ For more information, issues, or concerns, see [fresh](#https://github.com/jshtt
 
 Contains the hostname derived from the Host HTTP header.
 
-When the [trust proxy setting](/docs/1/More/Miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the value of the
+When the [trust proxy setting](/docs/v1/more/miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the value of the
 X-Forwarded-Host header field will be
 used instead. This header can be set by the client or by the proxy.
 
@@ -76,7 +76,7 @@ req.hostname
 
 The remote IP address of the request.
 
-When the [trust proxy setting](/docs/1/More/Miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the
+When the [trust proxy setting](/docs/v1/more/miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the
 value is
 derived from the left-most entry in the `X-Forwarded-For` header. This header can be set by the client or by the proxy.
 
@@ -87,7 +87,7 @@ req.ip
 
 ### req.ips
 
-When the [trust proxy setting](/docs/1/More/Miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, this property
+When the [trust proxy setting](/docs/v1/more/miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, this property
 contains an array of IP addresses specified in the `X-Forwarded-For` request header. Otherwise, it contains an empty
 array. This header can be set by the client or by the proxy.
 
@@ -123,7 +123,7 @@ req.path
 
 The request protocol string, http or https when requested with TLS.
 
-When the [trust proxy setting](/docs/1/More/Miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the value of the
+When the [trust proxy setting](/docs/v1/more/miscellaneous.md#quorra-behind-proxies) is set to a non-falsey value, the value of the
 `X-Forwarded-Proto` header field will be trusted and used if present. This header can be set by the client or by the
 proxy.
 
@@ -349,7 +349,7 @@ Flashes all input items to the session
 ```javascript
 req.input.flash();
 ```
-> **Note:** You may flash other data across requests using the [session](/docs/1/Middlewares/Session.md) middleware methods.
+> **Note:** You may flash other data across requests using the [session](/docs/v1/middlewares/session.md) middleware methods.
 
 ### req.input.flashExcept(name)
 

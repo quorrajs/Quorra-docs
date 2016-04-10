@@ -32,7 +32,7 @@ Route.get('/user/{id}', function(request, response) {
 ### res.locals
 
 An object that contains response local variables scoped to the request, and therefore available only to the view(s)
-rendered during that request / response cycle (if any). Otherwise, this property is identical to [app.locals](/docs/1/More/Miscellaneous.md#application-locals).
+rendered during that request / response cycle (if any). Otherwise, this property is identical to [app.locals](/docs/v1/more/miscellaneous.md#application-locals).
 
 This property is useful for exposing request-level information such as the request path name, authenticated user,
 user settings, and so on.
