@@ -23,5 +23,5 @@ Quorra.)
 ## Models
 
 Your app's models are exposed as global variables using their globalId. For instance, the model defined in the file
-app/models/Foo.js will be globally accessible as `Foo`. If this is disabled, you can still access your models via App
-.models.*.
+`app/models/Foo.js` will be globally accessible as `Foo`. If this is disabled, you can still access your models via
+`App.models.<model identity>`.

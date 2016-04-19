@@ -108,7 +108,7 @@ globalId: 'User'
 ```
 
 This flag changes the global name by which you can access your model (if the globalization of models is enabled). If
-you do not specify a `globalId` attribute on your model model `identity` will be used as `globalId`
+you do not specify a `globalId` attribute on your model, capitalized model `identity` will be used as `globalId`
 
 #### attributes
 
