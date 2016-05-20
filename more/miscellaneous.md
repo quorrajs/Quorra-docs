@@ -16,6 +16,8 @@ is placed in your user's session. You can use following methods to access and re
 
 ```javascript
 req.session.getToken()
+// or
+req.csrfToken()
 ```
 
 ### Regenerate CSRF token

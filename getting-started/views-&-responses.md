@@ -69,7 +69,7 @@ block content
 This view may be returned to the browser like so:
 
 ```javascript
-Route.get('/', function()
+Route.get('/', function(req, res)
 {
     res.view('index', { title: 'Quorra' })
 })
