@@ -59,6 +59,9 @@ menu:
         learning more:
             name: Lerning more
             items:
+                Security:
+                  text: Security
+                  relativeUrl: more/security.html
                 mail:
                   text: Mail
                   relativeUrl: more/mail.html
@@ -80,6 +83,9 @@ menu:
                 session:
                   text: Session
                   relativeUrl: middlewares/session.html
+                authentication:
+                  text: Authentication
+                  relativeUrl: middlewares/authentication.html
                 localization:
                   text: Localization
                   relativeUrl: middlewares/localization.html
