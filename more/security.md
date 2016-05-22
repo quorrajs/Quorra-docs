@@ -14,7 +14,7 @@ Quorra aims to make implementing authentication very simple. In fact, almost eve
 
 By default, Quorra includes a `User` model in your `app/models` directory. Please remember when building the Schema for this Model to ensure that the password field is a minimum of 60 characters.
 
-> **Note:** Don't forget to set auth middleware support to true in the `app/config/middleware.js` file to enable authentication support in your application.
+> **Note:** Don't forget to set auth and session middlewares to true in the `app/config/middleware.js` file to enable authentication support in your application.
 
 ## Storing Passwords
 
@@ -164,7 +164,9 @@ If you need to log an existing user object into your application, you may simply
 
 ```javascript
 	User.findOne(1).exec(function (err, user) {
-        req.auth.login(user);
+        req.auth.login(user, function () {
+            // user logged in
+        });
     });
 ```
 

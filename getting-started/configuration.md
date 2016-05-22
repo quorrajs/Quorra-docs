@@ -16,7 +16,10 @@ Sometimes you may need to access configuration values at run-time. You may do so
 
 ```javascript
 var Config = App.config;
+
 Config.get('app.timezone');
+// or
+Config.get('app').timezone;
 ```
 
 You may also specify a default value to return if the configuration option does not exist:
