@@ -34,7 +34,7 @@ By default the HTTP-server will listen to port 3000. However if that port is alr
 multiple applications this way, you might want to specify what port to use. Just add the --port argument:
 
 ```
-quorra ride --port=8080
+quorra ride --port 8080
 ```
 
 You can configure your default Quorra port in `app/config/app.js`
