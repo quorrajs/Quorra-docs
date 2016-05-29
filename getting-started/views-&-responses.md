@@ -18,6 +18,7 @@ Route.get('/', function(req, res)
     res.send('Hello World');
 });
 ```
+
 ### Creating Custom Responses
 
 A Response object provides a variety of methods for building HTTP responses.
@@ -27,6 +28,7 @@ res.set('Content-Type', 'text/plain');
 
 res.status(200).send('Hello world!');
 ```
+
 ### Attaching Cookies To Responses
 
 ```javascript
