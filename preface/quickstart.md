@@ -143,9 +143,9 @@ Now let's modify our `/users` route to look like this:
 ```javascript
 Route.get('users', function(req, res)
 {
-    var users = User.find();
-
-    res.view('users', {users: users});
+    User.find(function (err, users) {
+        res.view('users', {users: users});
+    });
 });
 ```
 
