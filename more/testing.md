@@ -1,7 +1,7 @@
 # Testing
 
 - [Introduction](#introduction)
-- [Defining & Running Tests](#defining-and-running-tests)
+- [Defining & Running Tests](#defining-&-running-tests)
 - [Test Environment](#test-environment)
 - [Calling Routes From Tests](#calling-routes-from-tests)
 
@@ -28,9 +28,9 @@ You may organise your test files like below.
     │    └── tests/
     │       ├── integration/
     │       │  ├── controllers/
-    │       │  │  └── UserController.spec.js
+    │       │  │  └── userController.spec.js
     │       │  ├── models/
-    │       │  │  └── User.spec.js
+    │       │  │  └── user.spec.js
     │       │  └── ...
     │       ├── unit/
     │       ├── fixtures/
