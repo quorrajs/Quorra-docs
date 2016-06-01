@@ -62,6 +62,9 @@ menu:
                 Security:
                   text: Security
                   relativeUrl: more/security.html
+                session:
+                  text: Session
+                  relativeUrl: middlewares/session.html
                 mail:
                   text: Mail
                   relativeUrl: more/mail.html
@@ -80,9 +83,6 @@ menu:
                 cookie parser:
                   text: Cookie Parser
                   relativeUrl: middlewares/cookie-parser.html
-                session:
-                  text: Session
-                  relativeUrl: middlewares/session.html
                 authentication:
                   text: Authentication
                   relativeUrl: middlewares/authentication.html
@@ -98,6 +98,9 @@ menu:
                 miscellanous:
                   text: Miscellaneous
                   relativeUrl: more/miscellaneous.html
+                testing:
+                  text: Testing
+                  relativeUrl: more/testing.html
         other:
             name: Quorra CLI
             items:

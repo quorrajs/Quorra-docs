@@ -19,7 +19,6 @@ dependencies installed.
 ## System requirements
 
 Quorra has a few system requirements.
-@todo: update
 
 - NodeJS >= 0.12.0
 - npm >= 2.5.1
