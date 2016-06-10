@@ -21,16 +21,28 @@ on, and your knowledge will grow as you explore other sections of the documentat
 ## Application start & Request lifecycle
 
 Whenever a Qurra application is started `index.js` script in the application root will be executed. From here, Quorra
-begins the process of starting the application and listening requests. Getting a general idea for the Quorra
+begins the process of starting the application and listening to the requests. Getting a general idea for the Quorra
 bootstrap process will be useful, so we'll cover that now!
 
-`index.js` file executes the `bootstrap/start.js` script with a callback argument. This file creates the new Positron
-Application object(Positron is the core module that powers Quorra.), which serves as the backbone of Quorra application.
+By far, the most important concept to grasp when learning about Quorra's bootstrap process is Service Providers. You
+can find a list of service providers by opening your `app/config/app.js` configuration file and finding the `providers`
+ array. These providers serve as the primary bootstrapping mechanism for Quorra. But, before we dig into service
+ providers, let's go back to `index.js`. `index.js` file executes the `bootstrap/start.js` script with a callback
+ argument. This file creates the new Positron `Application object`(Positron is the core module that powers Quorra.),
+ which serves as the backbone of Quorra application.
 
-After creating the Application object, a few project paths will be set and environment detection will be performed.
+After creating the `Application object`, a few project paths will be set and environment detection will be performed.
 Then, an internal Positron bootstrap script will be called with the callback from `index.js`. This file lives deep
-within the Positron source, and sets a few more settings based on quorra application configuration files, such as error reporting,
-session init etc and initializes application core components like router, view, filter, log, encrypter etc.
+within the Positron source, and sets a few more settings based on quorra application configuration files, such as
+`request.trustProxyFn`, `cache.etagFn` etc. But, in addition to setting these rather trivial configuration options, it
+also does something very important: registers all of the service providers configured for your application.
+
+Simple service providers only have one method: `register`. This `register` method is called when the service provider is
+registered with the application object via the application's own `register` method. Within this method, service
+providers register things with the Application object. Essentially, each service provider binds one or more
+services into the `Application object`, which allows you to access those bound services within your application. So, for
+example, the `MailServiceProvider` registers service `mailer`. Of course, service providers may be used for any
+bootstrapping task, not just registering things with the Application object.
 
 After initialization of all core components, `app/start` files will be loaded. Lastly, `app/routes.js` file
 will be loaded. Once `routes.js` file has been loaded, it returns the callback from the `index.js` file with the
@@ -41,7 +53,7 @@ So, let's summarize:
 
  - `index.js` file is executed.
  - `bootstrap/start.js` file creates Application and detects environment.
- - Internal `framework/start.js` file configures settings and loads core components.
+ - Internal `framework/start.js` file configures settings and loads service providers.
  - Application `app/start` files are loaded.
  - Application `app/routes.js` file is loaded.
  - Starts to listen to Request.
@@ -71,7 +83,8 @@ you have a `development` environment configured in your `bootstrap/start.js` fil
 
 Start files serve as a simple place to place any "bootstrapping" code. For example, you could  configure your logging
 preferences, set some js settings, etc. It's totally up to you. Of course, throwing all of your bootstrapping code
-into your start files can get messy.
+into your start files can get messy. For large applications, or if you feel your start files are getting messy,
+consider moving some bootstrapping code into [service providers](/docs/v1/more/service-providers.md).
 
 
 ## Application Events

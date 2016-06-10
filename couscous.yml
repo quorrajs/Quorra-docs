@@ -74,6 +74,9 @@ menu:
                 response object:
                   text: Response Object
                   relativeUrl: more/response.html
+                service providers:
+                  text: Service Providers
+                  relativeUrl: more/service-providers.html
                 body parser:
                   text: Body Parser
                   relativeUrl: middlewares/body-parser.html
