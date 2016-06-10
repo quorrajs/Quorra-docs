@@ -4,7 +4,7 @@
  - [Defining A Service Provider](#defining-a-service-provider)
  - [Registering A Service Provider At Run-Time](#registering-a-service-provider-at-run-time)
 
-## introduction
+## Introduction
 
 Service providers are a great way to group related service registrations in a single location. Think of them as a way
  to bootstrap components in your application. Within a service provider, you might register a custom authentication
