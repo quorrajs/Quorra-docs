@@ -61,8 +61,8 @@ The trust proxy setting is implemented using the [proxy-addr](https://www.npmjs.
 
 ## Application Locals
 
-In Quorra application local variables within the application can be saved to locals attribute of Quorra application
-instance, ie `App.locals`.
+In Quorra local variables within the application can be saved to locals attribute of Quorra application instance, ie
+`App.locals`.
 
 ```javascript
 App.locals.title
@@ -74,7 +74,9 @@ App.locals.email
 App.locals.strftime = require('strftime');
 ```
 
-Once set, the value of `App.locals` properties persist throughout the life of the application, in contrast with res
-.locals properties that are valid only for the lifetime of the request.
+Once set, the value of `App.locals` properties persist throughout the life of the application, in contrast with `res
+.locals` properties that are valid only for the lifetime of the `request`.
 
-You can access local variables in templates rendered within the application. This is useful for providing helper functions to templates, as well as app-level data. Locals are available in middleware via req.app.locals (see req.app)
+Both `app.locals` and `res.locals` properties are available in aplication view templates. This is useful for
+providing helper functions to templates, as well as app-level data. Application locals are available in `middleware`
+ via `req.app.locals` (see [req.app](/docs/v1/more/request.md#reqapp)).
