@@ -10,8 +10,8 @@ Each time your app receives an HTTP request, the configured HTTP middleware stac
 provide a convenient mechanism for filtering/modifying HTTP requests entering your application. For
 example, Quorra includes a middleware that attaches the session object to the request object before it reaches the
 route. Like that one can create a custom auth middleware which will allow the request to pass to the route only if
-user is authenticated. A CORS middleware might be responsible for adding the proper headers to all responses leaving
-your application. A logging middleware might log all incoming requests to your application.
+user is authenticated. A ServeStatic middleware might be responsible for responding with requested static resource. A
+ logging middleware might log all incoming requests to your application.
 
 There are several middleware included in the Quorra framework by default, including middleware for session handling,
 query parsing, enabling http method override feature, and more. All of these middlewares can be turned off or on from
@@ -57,12 +57,15 @@ application. Each layer can examine the request and even reject it entirely.
 
 ## Registering Middleware
 
-You can register your custom middleware with the application in `app/routes.js` file outside all routes, or you can
-create a middleware.js file in 'app' folder and include it in the `app/start/global.js` file like `require(path.join
-(App.path.app, 'middleware'));`
-
 Syntax for registering a custom middleware is:
 
 ```javascript
 App.middleware(require('<middleware constructor>'));
+```
+
+You can register your custom middleware with the application in `app/routes.js` file along with your application routes,
+ or you can create a `middleware.js` file in `app` directory and include it in the `app/start/global.js` file like:
+
+```javascript
+require(path.join(App.path.app, 'middleware'));
 ```
