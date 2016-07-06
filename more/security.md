@@ -40,7 +40,7 @@ The Quorra `Hash` service provides secure Bcrypt hashing which wraps the popular
 
 ## Authenticating Users
 
-To log a user into your application, you may use the `Auth::attempt` method.
+To log a user into your application, you may use the `auth.attempt` method.
 
 ```javascript
 	req.auth.attempt({email: 'email', password: 'password'}, function (result) {
