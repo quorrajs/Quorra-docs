@@ -383,7 +383,7 @@ Sometimes you may wish to use your own resolver for route parameters. Simply use
 ```javascript
 Route.bind('user', function(value, route, req, callback)
 {
-    User.findOne(id, function(err, model){
+    User.findOne(value, function(err, model){
         callback(model);
     });
 });
