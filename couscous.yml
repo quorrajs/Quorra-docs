@@ -98,6 +98,9 @@ menu:
                 serve static:
                   text: Server Static
                   relativeUrl: middlewares/serve-static.html
+                elixir:
+                  text: Elixir
+                  relativeUrl: more/elixir.html
                 miscellanous:
                   text: Miscellaneous
                   relativeUrl: more/miscellaneous.html

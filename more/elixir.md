@@ -21,7 +21,7 @@
 ## Introduction
 
 Quorra makes use of [Laravel's Elixir](https://github.com/laravel/elixir) module for asset pipelining. Elixir
-provides a clean, fluent API for defining basic [Gulp] (http://gulpjs.com) tasks for your Quorra  application. Elixir
+provides a clean, fluent API for defining basic [Gulp](http://gulpjs.com) tasks for your Quorra  application. Elixir
 supports several common CSS and JavaScript pre-processors, and even testing tools. Using method chaining, Elixir
 allows you to fluently define your asset pipeline. For example:
 
