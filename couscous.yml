@@ -1,5 +1,5 @@
 # Base URL of the published website
-baseUrl: https://quorrajs.org
+baseUrl: ../..
 
 docBaseUrl: /docs/v1
 
@@ -20,6 +20,9 @@ menu:
                 home:
                   text: Quickstart
                   relativeUrl: preface/quickstart.html
+                contribution guide:
+                  text: Contribution Guide
+                  relativeUrl: preface/contribution-guide.html
         getting-started:
             name: Getting started
             items:
