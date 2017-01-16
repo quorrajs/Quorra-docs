@@ -1,7 +1,7 @@
 # Elixir
 
 - [Introduction](#introduction)
-- [Installation & Setup](#installation)
+- [Installation & Setup](#installation-amp-setup)
 - [Running Elixir](#running-elixir)
 - [Working With Stylesheets](#working-with-stylesheets)
     - [Less](#less)
@@ -11,9 +11,9 @@
 - [Working With Scripts](#working-with-scripts)
     - [CoffeeScript](#coffeescript)
     - [Browserify](#browserify)
-    - [Scripts](#javascript)
-- [Copying Files & Directories](#copying-files-and-directories)
-- [Versioning / Cache Busting](#versioning-and-cache-busting)
+    - [Scripts](#scripts)
+- [Copying Files & Directories](#copying-files-amp-directories)
+- [Versioning / Cache Busting](#versioning--cache-busting)
 - [BrowserSync](#browser-sync)
 - [Calling Existing Gulp Tasks](#calling-existing-gulp-tasks)
 - [Writing Elixir Extensions](#writing-elixir-extensions)
