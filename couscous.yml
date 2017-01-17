@@ -60,7 +60,7 @@ menu:
                   text: Middleware
                   relativeUrl: getting-started/middleware.html
         learning more:
-            name: Lerning more
+            name: Learning more
             items:
                 Security:
                   text: Security
