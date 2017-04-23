@@ -298,7 +298,7 @@ elixir(function(mix) {
 ```
 
 After generating the versioned file, you may use Quorra's `elixir` helper function within your
-[views](/docs/v1/getting-started/views/views-&-responses.md) to load the appropriately hashed asset. The `elixir`
+[views](/docs/1.0.0/getting-started/views/views-&-responses.md) to load the appropriately hashed asset. The `elixir`
 function will automatically determine the name of the hashed file:
 
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
