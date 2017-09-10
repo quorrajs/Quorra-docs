@@ -171,6 +171,9 @@
                             </button>
                             <ul class="dropdown-menu">
                                 {% for version in versions %}
+                                    {% if currentFile == "README.md" %}
+                                        {% set currentFile = "index.md" %}
+                                    {% endif %}
                                     <li>
                                         <a href="{{ docBaseUrl ~ '/' ~ version ~ '/' }}{{ currentFile|slice(0, -2) }}html">{{ version | capitalize }}</a>
                                     </li>
@@ -270,7 +273,7 @@
     <script src="/assets/js/typeahead.js"></script>
     <script src="/assets/js/Hogan.js"></script>
     <script src="/assets/js/quorra.js"></script>
-    {#<script>console.log({{ _context | json_encode | raw }});</script>#}
+    <script>console.log({{ _context | json_encode | raw }});</script>
 </body>
 </html>
 
