@@ -84,7 +84,7 @@ you have a `development` environment configured in your `bootstrap/start.js` fil
 Start files serve as a simple place to place any "bootstrapping" code. For example, you could  configure your logging
 preferences, set some js settings, etc. It's totally up to you. Of course, throwing all of your bootstrapping code
 into your start files can get messy. For large applications, or if you feel your start files are getting messy,
-consider moving some bootstrapping code into [service providers](/docs/1.0.0/more/service-providers.md).
+consider moving some bootstrapping code into [service providers](/docs/{{version}}/more/service-providers.md).
 
 
 ## Application Events

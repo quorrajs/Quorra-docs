@@ -68,7 +68,7 @@ Route.get('users', 'UserController@getIndex');
 ```
 
 This route informs the framework that requests to the `/users` route should call the `getIndex` method on the
-`UserController`. For more information on controller routing, check out the [controller documentation](/docs/1.0.0/getting-started/controllers.md).
+`UserController`. For more information on controller routing, check out the [controller documentation](/docs/{{version}}/getting-started/controllers.md).
 
 ## Creating A View
 
