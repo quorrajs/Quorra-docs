@@ -1,7 +1,11 @@
 # Base URL of the published website
 baseUrl: https://quorrajs.org
 
-docBaseUrl: /docs/1.0.0
+docBaseUrl: /docs
+
+currentVersion: 1.0.0
+
+versions: ["master", "1.0.0"]
 
 # Used to link to the GitHub project
 github:
