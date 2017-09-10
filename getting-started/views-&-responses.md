@@ -5,7 +5,7 @@
  - [Views](#views)
  - [Special Responses](#special-responses)
 
-Read more about Quorra request object [here](/docs/1.0.0/more/response.md).
+Read more about Quorra request object [here](/docs/{{version}}/more/response.md).
 
 ## Basic Responses
 
@@ -102,7 +102,7 @@ Content-Disposition “filename=” parameter, aka the one that will appear in t
 default, however you may provide an override filename.
 
 When an error has occurred or transfer is complete the optional callback fn is invoked. This method uses [res.sendfile
-()](/docs/1.0.0/more/response.md#ressendfilepath--options--fn) to transfer the file.
+()](/docs/{{version}}/more/response.md#ressendfilepath--options--fn) to transfer the file.
 
 ```javascript
 res.download(pathToFile, fileName, callback);

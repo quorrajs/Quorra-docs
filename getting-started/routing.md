@@ -405,4 +405,4 @@ More information on handling 404 exceptions and using custom responses for these
 
 Quorra allows you to not only route to Closures, but also to controller classes.
 
-See the documentation on [Controllers](/docs/1.0.0/getting-started/controllers.md) for more details.
+See the documentation on [Controllers](/docs/{{version}}/getting-started/controllers.md) for more details.

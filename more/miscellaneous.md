@@ -79,4 +79,4 @@ Once set, the value of `App.locals` properties persist throughout the life of th
 
 Both `app.locals` and `res.locals` properties are available in aplication view templates. This is useful for
 providing helper functions to templates, as well as app-level data. Application locals are available in `middleware`
- via `req.app.locals` (see [req.app](/docs/1.0.0/more/request.md#reqapp)).
+ via `req.app.locals` (see [req.app](/docs/{{version}}/more/request.md#reqapp)).
