@@ -3,7 +3,7 @@ baseUrl: https://quorrajs.org
 
 docBaseUrl: /docs
 
-currentVersion: 1.0.0
+currentVersion: master
 
 versions: ["master", "1.0.0"]
 
