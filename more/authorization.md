@@ -37,12 +37,59 @@ Gates are Closures that determine if a user is authorized to perform a given act
     AuthServiceProvider.prototype.boot = function (done) {
         this.registerPolicies();
 
-        this.__app.define('update-post', function (user, post, callback) {
+        this.__app.gate.define('update-post', function (user, post, callback) {
             return callback(user.id == post.user_id);
         });
 
         done();
     };
+```
+
+Gates may also be defined using a `Class@method` style callback string, like controllers:
+
+```javascript
+    /**
+     * Register any application authentication / authorization services.
+     *
+     * @param {function} done
+     */
+    AuthServiceProvider.prototype.boot = function (done) {
+        this.registerPolicies();
+
+        this.__app.gate.define('update-post', 'policies/PostPolicy@update')
+
+        done();
+    };
+```
+
+#### Resource Gates
+
+You may also define multiple Gate abilities at once using the `resource` method:
+
+```javascript
+    this.__app.gate.resource('posts', 'policies/PostPolicy');
+```
+
+This is identical to manually defining the following Gate definitions:
+
+```javascript
+    var gate = this.__app.gate;
+
+    gate.define('posts.view', 'policies/PostPolicy@view');
+    gate.define('posts.create', 'policies/PostPolicy@create');
+    gate.define('posts.update', 'policies/PostPolicy@update');
+    gate.define('posts.delete', 'policies/PostPolicy@delete');
+```
+
+By default, the `view`, `create`, `update`, and `delete` abilities will be defined. You may override the default abilities by passing an object as a third argument to the `resource` method. The keys of the object define the names of the abilities while the values define the method names. For example, the following code will create two new Gate definitions - `posts.image` and `posts.photo`:
+
+```javascript
+    var gate = this.__app.gate;
+
+    gate.resource('posts', 'policies/PostPolicy', {
+        'image': 'updateImage',
+        'photo': 'updatePhoto',
+    });
 ```
 
 ### Authorizing Actions
@@ -89,13 +136,13 @@ If you would like to determine if a particular user is authorized to perform an 
 
 Policies are classes that organize authorization logic around a particular model or resource. For example, if your application is a blog, you may have a `Post` model and a corresponding `PostPolicy` to authorize user actions such as creating or updating posts.
 
-You may generate a policy using the `make:policy` [quorra command](/docs/{{version}}/quorra-cli/overview.md). The generated policy will be placed in the `app/policies` directory. If this directory does not exist in your application, Quorra will create it for you:
+You may generate a policy using the `generate-policy` [quorra command](/docs/{{version}}/quorra-cli/overview.md). The generated policy will be placed in the `app/policies` directory. If this directory does not exist in your application, Quorra will create it for you:
 
     quorra generate-policy PostPolicy
 
 The `generate-policy` command will generate an empty policy class. If you would like to generate a class with the basic "CRUD" policy methods already included in the class, you may specify a `--model` when executing the command:
 
-    php artisan generate-policy --model=Post PostPolicy
+    quorra generate-policy --model=Post PostPolicy
 
 ### Registering Policies
 
@@ -133,7 +180,7 @@ Once the policy exists, it needs to be registered. The `AuthServiceProvider` inc
 
 Once the policy has been registered, you may add methods for each action it authorizes. For example, let's define an `update` method on our `PostPolicy` which determines if a given `User` can update a given `Post` instance.
 
-The `update` method will receive a `User` and a `Post` instance as its arguments, and should return `true` or `false` indicating whether the user is authorized to update the given `Post`. So, for this example, let's verify that the user's `id` matches the `user_id` on the post:
+The `update` method will receive a `User` and a `Post` instance as its arguments, and should return `true` or `false` indicating whether the user is authorized to update the given `Post`. So, for this example, let's verify that the user's `id` matches the `userId` on the post:
 
 ```javascript
     function PostPolicy() {
@@ -147,7 +194,7 @@ The `update` method will receive a `User` and a `Post` instance as its arguments
     * @param {function} callback
     */
     PostPolicy.prototype.update = function (user, post, callback) {
-        return callback(user.id === post.userId;)
+        return callback(user.id === post.userId)
     }
 
     module.exports = PostPolicy;
@@ -155,7 +202,7 @@ The `update` method will receive a `User` and a `Post` instance as its arguments
 
 You may continue to define additional methods on the policy as needed for the various actions it authorizes. For example, you might define `view` or `delete` methods to authorize various `Post` actions, but remember you are free to give your policy methods any name you like.
 
-> **Note:** If you used the `--model` option when generating your policy via the Artisan console, it will already contain methods for the `view`, `create`, `update`, and `delete` actions.
+> **Note:** If you used the `--model` option when generating your policy via the quorra cli, it will already contain methods for the `view`, `create`, `update`, and `delete` actions.
 
 ### Methods Without Models
 
