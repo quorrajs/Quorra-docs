@@ -3,7 +3,6 @@
 - [Introduction](#introduction)
 - [Gates](#gates)
     - [Writing Gates](#writing-gates)
-    - [Authorizing Actions](#authorizing-actions-via-gates)
 - [Creating Policies](#creating-policies)
     - [Generating Policies](#generating-policies)
     - [Registering Policies](#registering-policies)
@@ -11,7 +10,8 @@
     - [Policy Methods](#policy-methods)
     - [Methods Without Models](#methods-without-models)
     - [Policy Filters](#policy-filters)
-- [Authorizing Actions Using Policies](#authorizing-actions-using-policies)
+- [Authorizing Actions](#authorizing-actions)
+    - [Via The Gate instance](#via-the-gate-instance)
     - [Via The User Model](#via-the-user-model)
 
 ## Introduction
@@ -26,7 +26,7 @@ You do not need to choose between exclusively using gates or exclusively using p
 
 ### Writing Gates
 
-Gates are Closures that determine if a user is authorized to perform a given action and are typically defined in the `app/providers/AuthServiceProvider` class using the `gate` manager. Gates always receive a user instance as their first argument, and may optionally receive additional arguments such as a relevant Waterline model:
+Gates are Closures that determine if a user is authorized to perform a given action and are typically defined in the `app/providers/AuthServiceProvider` class using the `gateManager'. Gates always receive a user instance as their first argument, and may optionally receive additional arguments such as a relevant Waterline model:
 
 ```javascript
     /**
@@ -89,44 +89,6 @@ By default, the `view`, `create`, `update`, and `delete` abilities will be defin
     gate.resource('posts', 'policies/PostPolicy', {
         'image': 'updateImage',
         'photo': 'updatePhoto',
-    });
-```
-
-### Authorizing Actions
-
-To authorize an action using gates, you should use the `allows` or `denies` methods. Note that you are not required to pass the currently authenticated user to these methods. Quorra will automatically take care of passing the user into the gate Closure:
-
-```javascript
-    var Gate = request.gate;
-
-    Gate.allows('update-post', post, function (allows) {
-        if(allows) {
-            // The current user can update the post...
-        }
-    });
-
-    Gate.denies('update-post', post, function (denies) {
-        if(denies) {
-            // The current user can't update the post...
-        }
-    });
-```
-
-If you would like to determine if a particular user is authorized to perform an action, you may use the `forUser` method on the `Gate` service:
-
-```javascript
-    var Gate = request.gate;
-
-    if (Gate.forUser(user)->allows('update-post', function (allows) {
-        if(allows) {
-          // The current user can update the post...
-        }
-    });
-
-    Gate.denies('update-post', post, function (denies) {
-        if(denies) {
-            // The current user can't update the post...
-        }
     });
 ```
 
@@ -236,7 +198,45 @@ For certain users, you may wish to authorize all actions within a given policy. 
 
 If you would like to deny all authorizations for a user you should return `false` from the `before` method. If `null` is returned, the authorization will fall through to the policy method.
 
-## Authorizing Actions Using Policies
+## Authorizing Actions
+
+### Via the gate instance
+
+To authorize an actions, you should use the `allows` or `denies` methods provided on the gate instance. Note that you are not required to pass the currently authenticated user to these methods. Quorra will automatically take care of passing the user into the gate Closure:
+
+```javascript
+    var Gate = request.gate;
+
+    Gate.allows('update-post', post, function (allows) {
+        if(allows) {
+            // The current user can update the post...
+        }
+    });
+
+    Gate.denies('update-post', post, function (denies) {
+        if(denies) {
+            // The current user can't update the post...
+        }
+    });
+```
+
+If you would like to determine if a particular user is authorized to perform an action, you may use the `forUser` method on the `Gate` service:
+
+```javascript
+    var Gate = request.gate;
+
+    if (Gate.forUser(user)->allows('update-post', function (allows) {
+        if(allows) {
+          // The current user can update the post...
+        }
+    });
+
+    Gate.denies('update-post', post, function (denies) {
+        if(denies) {
+            // The current user can't update the post...
+        }
+    });
+```
 
 ### Via The User Model
 

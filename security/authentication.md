@@ -1,4 +1,4 @@
-# Security
+# Authentication
 
  - [Configuration](#configuration)
  - [Storing Passwords](#storing-passwords)
@@ -6,7 +6,6 @@
  - [Manually Logging In Users](#manually)
  - [Protecting Routes](#protecting-routes)
  - [HTTP Basic Authentication](#http-basic-authentication)
- - [Encryption](#encryption)
 
 ## Configuration
 
@@ -263,22 +262,4 @@ You may also use HTTP Basic Authentication without setting a user identifier coo
             }
         });
 	});
-```
-
-## Encryption
-
-Quorra provides facilities for strong AES encryption:
-
-#### Encrypting A Value
-
-```javascript
-	var encrypted = App.encrypter.encrypt('secret');
-```
-
-> **Note:** Be sure to set a random string in the `key` option of the `app/config/app.js` file. Otherwise, encrypted values will not be secure.
-
-#### Decrypting A Value
-
-```javascript
-	var  decrypted = App.encrypter.decrypt(encrypted);
 ```

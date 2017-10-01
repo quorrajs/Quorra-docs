@@ -66,9 +66,6 @@ menu:
         learning more:
             name: Learning more
             items:
-                Security:
-                  text: Security
-                  relativeUrl: more/security.html
                 session:
                   text: Session
                   relativeUrl: middlewares/session.html
@@ -114,6 +111,18 @@ menu:
                 testing:
                   text: Testing
                   relativeUrl: more/testing.html
+        security:
+            name: Security
+            items:
+                Authentication:
+                  text: Authentication
+                  relativeUrl: security/authentication.html
+                Authorization:
+                  text: Authorization
+                  relativeUrl: security/authorization.html
+                Encryption:
+                  text: Encryption
+                  relativeUrl: security/encryption.html
         other:
             name: Quorra CLI
             items:
