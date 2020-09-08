@@ -94,7 +94,7 @@ block content
   p Users!
 ```
 
-Here we use [Pug](https://pugjs.org/) templating system, Quorra comes pre-installed with jade
+Here we use [Pug](https://pugjs.org/) templating system, Quorra comes pre-installed with Pug
 template engine. You can configure template engines for your application in `app/config/view.js`. Quorra uses module
 [consolidate](https://github.com/tj/consolidate.js), a template engine consolidation library and supports all the
 template engines [supported by the consolidate library](https://github.com/tj/consolidate
