@@ -73,8 +73,8 @@ This route informs the framework that requests to the `/users` route should call
 ## Creating A View
 
 Next, we'll create a simple view to display our user data. Views live in the `resources/views` directory and contain
-the HTML of your application. We're going to place two new views in this directory: `layout.jade` and `users.jade`
-First, let's create our layout.jade file:
+the HTML of your application. We're going to place two new views in this directory: `layout.pug` and `users.pug`
+First, let's create our layout.pug file:
 
 ```
 doctype html
@@ -85,7 +85,7 @@ html
     block content
 ```
 
-Next, we'll create our `users.jade` view:
+Next, we'll create our `users.pug` view:
 
 ```
 extends layout
@@ -94,7 +94,7 @@ block content
   p Users!
 ```
 
-Here we use [jade](https://github.com/visionmedia/jade) templating system, Quorra comes pre-installed with jade
+Here we use [Pug](https://pugjs.org/) templating system, Quorra comes pre-installed with jade
 template engine. You can configure template engines for your application in `app/config/view.js`. Quorra uses module
 [consolidate](https://github.com/tj/consolidate.js), a template engine consolidation library and supports all the
 template engines [supported by the consolidate library](https://github.com/tj/consolidate
